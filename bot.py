@@ -39,10 +39,6 @@ async def on_member_remove(member):
 
 @client.command()
 async def msg(ctx,*,message):
-
-    if client.user == message.author: 
-        return
-
     response = await rs.get_ai_response(message.content)
     
     await message.reply(response)
