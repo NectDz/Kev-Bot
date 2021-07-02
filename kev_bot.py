@@ -427,7 +427,7 @@ async def fu(ctx, user):
 nsfwCounter = 0 
 apiKey = os.environ['giphyKEY']
 api_instance = giphy_client.DefaultApi()
-api_response = api_instance.gifs_search_get(apiKey, 'nsfw', limit=50, rating = 'r')
+api_response = api_instance.gifs_search_get(apiKey, 'hot girls', limit=50, rating = 'r')
 lst = list(api_response.data)
 
 @client.command()
@@ -436,7 +436,7 @@ async def nsfw(ctx):
     global api_response, lst, nsfwCounter
 
     if nsfwCounter >= 75: 
-        api_response = api_instance.gifs_search_get(apiKey, 'nsfw', limit=50, rating = 'r')
+        api_response = api_instance.gifs_search_get(apiKey, 'hot girls', limit=50, rating = 'r')
         lst = list(api_response.data)
         nsfwCounter = 0 
 
