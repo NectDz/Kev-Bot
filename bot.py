@@ -4,7 +4,6 @@ from discord.ext import commands
 from gifs import cuddleGifs,hugGifs,slapGifs,sexyGifs,kissGifs,beanerGifs,crackerGifs, gmGifs, gnGifs, killGifs, cryGifs, fuckYouGifs
 from check import checkIfGif
 import time, random, os, asyncpraw 
-from prsaw import RandomStuffV2
 
 memeCounter = 0 
 
@@ -21,8 +20,6 @@ botPrefix = ",kg "
 client = commands.Bot(command_prefix= botPrefix, case_insensitive=True)
 client.remove_command('help')
 
-rs = RandomStuffV2()
-
 @client.event
 async def on_ready():
     print("Bot is ready!")
@@ -35,16 +32,13 @@ async def on_member_join(member):
 async def on_member_remove(member):
     print(f'{member} is gone!.')
 
-# Bot 
+# CoolDowns
 
-@client.command()
-async def msg(ctx,*,message):
-    response = rs.get_ai_response(message)
-    
-    print(response)
-
-    await rs.aclose()
-
+@client.event
+async def on_command_error(ctx, error):
+    if isinstance(error, commands.errors.CommandOnCooldown):  
+        # isinstance is used to compare 2 thing. If they are the same it returns True in this case were comparing if the error is equal to the other error
+        return await ctx.send('The command **{}** is still on cooldown for {:.2f}'.format(ctx.command.name, error.retry_after))
 
 # Meme 
 
@@ -255,6 +249,7 @@ async def worst(ctx,member):
 # Slap command
 
 @client.command()
+@commands.cooldown(1, 10, commands.BucketType.user)
 async def slap(ctx,user):
     if str(user) == "@everyone":
         await ctx.send(f'Do not do that...' )
