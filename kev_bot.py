@@ -3,8 +3,8 @@ import discord
 from discord.ext import commands
 from gifs import cuddleGifs,hugGifs,slapGifs,sexyGifs,kissGifs,beanerGifs,crackerGifs, gmGifs, gnGifs, killGifs, cryGifs, fuckYouGifs, shutUpGifs
 from check import checkIfGif
-import time, random, os, asyncpraw, TenGiphPy, asyncio
-
+import time, random, os, asyncpraw, TenGiphPy, giphy_client
+from giphy_client.rest import ApiException
 memeCounter = 0 
 
 allSubs = []
@@ -424,17 +424,25 @@ async def fu(ctx, user):
 
 # NSFW | No Help Command
 
-t = TenGiphPy.Tenor(token= os.environ['tenor_KEY'])
-async def nsfwLink():
-    return t.random('nsfw')
+nsfwCounter = 0 
+apiKey = os.environ['giphyKEY']
+api_instance = giphy_client.DefaultApi(apiKey, 'nsfw', limit=50, rating = 'r')
+api_response = api_instance.gifs_search_get('nsfw')
+lst = list(api_response.data)
 
-    
 @client.command()
 @commands.cooldown(1, 7, commands.BucketType.user)
 async def nsfw(ctx):
+    global api_response, lst, nsfwCounter
 
-    nsfw = asyncio.run(nsfwLink())
+    if nsfwCounter >= 75: 
+        api_response = api_instance.gifs_search_get('nsfw')
+        lst = list(api_response.data)
+        nsfwCounter = 0 
 
+    nsfwCounter += 1
+    
+    gif = random.choice(lst)
 
     em = discord.Embed(color = discord.Colour.blue(),title = "KevBot NSFW")
     em.set_image(url = nsfw)
