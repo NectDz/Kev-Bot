@@ -57,7 +57,6 @@ async def meme(ctx):
 
     name = random_sub.title
     url = random_sub.url
-    print(url)
     em = discord.Embed(color = discord.Colour.blue(),title = ":100: KevBot Meme :100:", description = name)
     em.set_image(url = url)
 

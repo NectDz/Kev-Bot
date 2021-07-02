@@ -35,9 +35,9 @@ hugGifs = ['https://media.giphy.com/media/VbawWIGNtKYwOFXF7U/giphy.gif',
            'https://media.giphy.com/media/fgV89nk5uA8lG/giphy.gif'
           ]
 
-slapGifs = ['http://gph.is/16Q8alO',
-            'https://gph.is/1oXZq6x',
-            'https://gph.is/2aUqSQF',
+slapGifs = ['https://media.giphy.com/media/gSIz6gGLhguOY/giphy.gif',
+            'https://media.giphy.com/media/3XlEk2RxPS1m8/giphy.gif',
+            'https://media.giphy.com/media/vxvNnIYFcYqEE/giphy.gif',
             'https://media.giphy.com/media/xT8qB7Sbwskk27Rdy8/giphy.gif',
             'https://media.giphy.com/media/mEtSQlxqBtWWA/giphy.gif',
             'https://media.giphy.com/media/Qvwc79OfQOa4g/giphy.gif',
