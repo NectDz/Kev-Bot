@@ -263,6 +263,7 @@ async def slap(ctx,user):
 
 # Sexy Command
 @client.command()
+@commands.cooldown(1, 10, commands.BucketType.user)
 async def sexy(ctx):
     sexy = sexyGifs
     await ctx.send(f'{random.choice(sexy)}' )
@@ -276,6 +277,7 @@ async def hug(ctx):
     await ctx.send(embed =em)
 
 @client.command()
+@commands.cooldown(1, 10, commands.BucketType.user)
 async def hug(ctx,user):
     if str(user) == "@everyone" or str(user) == ctx.author.mention:
         await ctx.send(f"Can't do not do that..." ) 
@@ -290,6 +292,7 @@ async def hug(ctx,user):
 
 # Cuddle Command
 @client.command()
+@commands.cooldown(1, 10, commands.BucketType.user)
 async def cuddle(ctx,user):
     if str(user) == "@everyone" or str(user) == ctx.author.mention:
         await ctx.send(f"Can't do not do that weirdo..." ) 
@@ -310,6 +313,7 @@ async def kiss(ctx):
     await ctx.send(embed =em)
 
 @client.command()
+@commands.cooldown(1, 10, commands.BucketType.user)
 async def kiss(ctx,user):
     if str(user) == "@everyone" or str(user) == ctx.author.mention:
         await ctx.message.add_reaction('🤔')
@@ -332,6 +336,7 @@ async def beaner(ctx):
     await ctx.send(embed =em)
 
 @client.command()
+@commands.cooldown(1, 10, commands.BucketType.user)
 async def beaner(ctx,user):
     if str(user) == "@everyone":
         await ctx.send(f'Do not do that...' ) 
@@ -352,6 +357,7 @@ async def cracker(ctx):
     await ctx.send(embed =em)
 
 @client.command()
+@commands.cooldown(1, 10, commands.BucketType.user)
 async def cracker(ctx,user):
     if str(user) == "@everyone" or str(user) == ctx.author.mention:
         await ctx.send(f"Can't do not do that..." ) 
@@ -373,6 +379,7 @@ async def kill(ctx):
     await ctx.send(embed =em)
 
 @client.command()
+@commands.cooldown(1, 10, commands.BucketType.user)
 async def kill(ctx,user):
     if str(user) == "@everyone" or str(user) == ctx.author.mention:
         await ctx.send(f"Can't do not do that..." ) 
@@ -393,6 +400,7 @@ async def cry(ctx):
     await ctx.send(embed =em)
 
 @client.command()
+@commands.cooldown(1, 10, commands.BucketType.user)
 async def cry(ctx):
     cry  = random.choice(cryGifs)
     em = discord.Embed(colour = discord.Colour.red())
@@ -409,6 +417,7 @@ async def fu(ctx):
     await ctx.send(embed =em)
 
 @client.command()
+@commands.cooldown(1, 10, commands.BucketType.user)
 async def fu(ctx, user):
     fuck  = random.choice(fuckYouGifs)
     em = discord.Embed(colour = discord.Colour.red())
@@ -420,6 +429,7 @@ async def fu(ctx, user):
 nsfwList = []
 nsfwCounter = 0  
 @client.command()
+@commands.cooldown(1, 7, commands.BucketType.user)
 async def nsfw(ctx):
     global nsfwList, nsfwCounter
     if len(nsfwList) == 0 or nsfwCounter >= 75:
