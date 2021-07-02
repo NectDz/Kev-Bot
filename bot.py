@@ -125,7 +125,7 @@ async def help2(ctx):
 @help.command()
 async def kick(ctx):
     em = discord.Embed(colour = discord.Colour.blue(),title = "Kick Command", description = "Kicks a member from the server")
-    em.add_field(name = "**Syntax**", value =f"{botPrefix} kick <member>")
+    em.add_field(name = "**Syntax**", value =f"{botPrefix} kick <member> [reason]")
     await ctx.send(embed =em)
 
 @client.command()
