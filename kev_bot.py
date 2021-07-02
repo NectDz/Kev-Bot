@@ -448,8 +448,6 @@ async def nsfw(ctx):
 
     await ctx.send(embed = em)
 
-
-
 @help.command()
 async def shutup(ctx): 
     em = discord.Embed(colour = discord.Colour.blue(),title = "Cry Command", description = "Shows a crying gif ")
