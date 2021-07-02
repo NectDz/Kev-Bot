@@ -181,4 +181,16 @@ fuckYouGifs = ['https://media.giphy.com/media/XozypzpGakVuX2ciZJ/giphy.gif',
                'https://media.giphy.com/media/8OJ8T0ZXF7BG8/giphy.gif',
                'https://media.giphy.com/media/21PindEnXnCJpHkQ4g/giphy.gif']
 
-shutUpGifs = ['']
+shutUpGifs = ['https://media.tenor.com/images/9072f8795acccc181418d543ba3e6185/tenor.gif',
+              'https://media.tenor.com/images/6cc006c1248a9ba3b2f04d982cddd3c2/tenor.gif',
+              'https://media.tenor.com/images/e7da4052717b06da48a59eaf51a99105/tenor.gif',
+              'https://media.tenor.com/images/64330182971cc893a85fa52e4fe53035/tenor.gif',
+              'https://media.tenor.com/images/72d6334d7b64269d1c3aa8ed2c420cca/tenor.gif',
+              'https://media.tenor.com/images/9f94d642e7356214c08c0ffcee8bfd74/tenor.gif',
+              'https://media.tenor.com/images/221136ca61d7658b796b0fea5cf4e229/tenor.gif',
+              'https://media.tenor.com/images/b3d48329028cfeb5b4a7ee9a6aafe82f/tenor.gif',
+              'https://media.tenor.com/images/039e1ea4a26121176ced2c3b468b613c/tenor.gif',
+              'https://media.tenor.com/images/779c63258287bf5bf2c4e2ed86f43839/tenor.gif',
+              'https://media.tenor.com/images/ab3dd9ddb1d058cfc835ebc280aa94b4/tenor.gif',
+              'https://media.tenor.com/images/ad15703d6819b78a6a5ffe416b5488ab/tenor.gif',
+              'https://media.tenor.com/images/620c6775c1440af8971bf79b12505b97/tenor.gif']

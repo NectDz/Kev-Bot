@@ -3,7 +3,7 @@ import discord
 from discord.ext import commands
 from gifs import cuddleGifs,hugGifs,slapGifs,sexyGifs,kissGifs,beanerGifs,crackerGifs, gmGifs, gnGifs, killGifs, cryGifs, fuckYouGifs, shutUpGifs
 from check import checkIfGif
-import time, random, os, asyncpraw 
+import time, random, os, asyncpraw, TenGiphPy, asyncio
 
 memeCounter = 0 
 
@@ -423,28 +423,17 @@ async def fu(ctx, user):
     await ctx.send(embed =em)
 
 # NSFW | No Help Command
-nsfwList = []
-nsfwCounter = 0  
+
+t = TenGiphPy.Tenor(token= os.environ['tenor_KEY'])
+
 @client.command()
 @commands.cooldown(1, 7, commands.BucketType.user)
 async def nsfw(ctx):
-    global nsfwList, nsfwCounter
-    if len(nsfwList) == 0 or nsfwCounter >= 75:
-        nsfwCounter = 0 
-        subreddit = await reddit.subreddit("nsfwanimegifs")
-        nsfwList = []
-        async for submission in subreddit.hot(limit=75):
-            if checkIfGif(submission.url) == True:
-                nsfwList.append(submission) 
-      
-    nsfwCounter += 1
 
-    random_sub = random.choice(nsfwList)
-    name = random_sub.title
-    url = random_sub.url
+    nsfw = asyncio.run(t.arandom('nsfw'))
 
-    em = discord.Embed(color = discord.Colour.blue(),title = "KevBot NSFW", description = name)
-    em.set_image(url = url)
+    em = discord.Embed(color = discord.Colour.blue(),title = "KevBot NSFW")
+    em.set_image(url = nsfw)
 
     await ctx.send(embed = em)
 
