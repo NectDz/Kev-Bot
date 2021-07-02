@@ -144,6 +144,14 @@ async def ban(ctx):
 
     await ctx.send(embed =em)
 
+@client.command()
+@commands.has_permissions(ban_members=True)
+async def ban(ctx, user: discord.Member,*, reason):
+
+    await ctx.send(f"{user} has been banned by {ctx.author.mention}")
+    await user.ban(reason =reason)
+
+
 # Clear Command
 
 @help.command()
