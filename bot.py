@@ -14,11 +14,11 @@ memeCounter = 0
 
 allSubs = []
 
-reddit = asyncpraw.Reddit(client_id = "HGEilyXPNUjEUw",
-                     client_secret = "z2JhHEgtPhT36z8PdFwbinYwz4lERA",
-                     username = "Nect_Dz",
-                     password = "Pelusais14!",
-                     user_agent= "pythonPraw")
+reddit = asyncpraw.Reddit(client_id = os.environ['clientID'],
+                     client_secret = os.environ['clientSecret'],
+                     username = os.environ['redditUser'],
+                     password = os.environ['redditPass'],
+                     user_agent= os.environ['userAgent'])
 
 botPrefix = ",kg "
 
