@@ -1,7 +1,7 @@
 
 import discord
 from discord.ext import commands
-from gifs import cuddleGifs,hugGifs,slapGifs,sexyGifs,kissGifs,beanerGifs,crackerGifs, gmGifs, gnGifs, killGifs, cryGifs, fuckYouGifs
+from gifs import cuddleGifs,hugGifs,slapGifs,sexyGifs,kissGifs,beanerGifs,crackerGifs, gmGifs, gnGifs, killGifs, cryGifs, fuckYouGifs, shutUpGifs
 from check import checkIfGif
 import time, random, os, asyncpraw 
 
@@ -165,7 +165,6 @@ async def ban(ctx):
 @client.command()
 @commands.has_permissions(ban_members=True)
 async def ban(ctx, user: discord.Member,*, reason):
-
     await ctx.send(f"{user} has been banned by {ctx.author.mention}")
     await user.ban(reason =reason)
 
@@ -450,5 +449,20 @@ async def nsfw(ctx):
     await ctx.send(embed = em)
 
 
+
+@help.command()
+async def shutup(ctx): 
+    em = discord.Embed(colour = discord.Colour.blue(),title = "Cry Command", description = "Shows a crying gif ")
+    em.add_field(name = "**Syntax**", value =f"{botPrefix} shutup @<member>")
+    await ctx.send(embed =em)
+
+@client.command()
+@commands.cooldown(1, 10, commands.BucketType.user)
+async def shutup(ctx, user):
+    shutup  = random.choice(shutUpGifs)
+    em = discord.Embed(colour = discord.Colour.red())
+    em.add_field(name = f"Fuck You Command",value = f'**{ctx.author.mention} says FUCK YOU to {user}**')
+    em.set_image(url = shutup)
+    await ctx.send(embed =em)
 
 client.run(os.environ['DISCORD_BOT_TOKEN'])

@@ -180,3 +180,5 @@ fuckYouGifs = ['https://media.giphy.com/media/XozypzpGakVuX2ciZJ/giphy.gif',
                'https://media.giphy.com/media/4BXKwKrbZxVNm/giphy.gif',
                'https://media.giphy.com/media/8OJ8T0ZXF7BG8/giphy.gif',
                'https://media.giphy.com/media/21PindEnXnCJpHkQ4g/giphy.gif']
+
+shutUpGifs = ['']
