@@ -4,7 +4,7 @@ from discord.ext import commands
 from gifs import cuddleGifs,hugGifs,slapGifs,sexyGifs,kissGifs,beanerGifs,crackerGifs, gmGifs, gnGifs, killGifs, cryGifs, fuckYouGifs
 from check import checkIfGif
 import time, random, os, asyncpraw 
-from prsaw import RandomStuff
+from prsaw import RandomStuffV2
 
 memeCounter = 0 
 
@@ -21,7 +21,7 @@ botPrefix = ",kg "
 client = commands.Bot(command_prefix= botPrefix, case_insensitive=True)
 client.remove_command('help')
 
-rs = RandomStuff(async_mode= True)
+rs = RandomStuffV2()
 
 @client.event
 async def on_ready():
