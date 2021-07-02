@@ -3,7 +3,7 @@ import discord
 from discord.ext import commands
 from gifs import cuddleGifs,hugGifs,slapGifs,sexyGifs,kissGifs,beanerGifs,crackerGifs, gmGifs, gnGifs, killGifs, cryGifs, fuckYouGifs, shutUpGifs
 from check import checkIfGif
-import time, random, os, asyncpraw, TenGiphPy, giphy_client
+import time, random, os, asyncpraw, giphy_client
 from giphy_client.rest import ApiException
 memeCounter = 0 
 
