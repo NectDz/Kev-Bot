@@ -50,7 +50,7 @@ async def meme(ctx):
         subreddit = await reddit.subreddit("memes")
         allSubs =[]
 
-        async for submission in subreddit.hot(limit=200):
+        async for submission in subreddit.hot(limit=75):
             if checkIfGif(submission.url):
                 allSubs.append(submission)
 
@@ -76,7 +76,7 @@ async def gaming(ctx):
         gamingCounter = 0 
         subreddit = await reddit.subreddit("gaming")
         gamingList = []
-        async for submission in subreddit.hot(limit=200):
+        async for submission in subreddit.hot(limit=75):
             if checkIfGif(submission.url) == True:
                 gamingList.append(submission)    
     
@@ -91,8 +91,6 @@ async def gaming(ctx):
     em.set_image(url = url)
 
     await ctx.send(embed = em)
-
-
 
 # Help Command
 
@@ -436,7 +434,7 @@ async def nsfw(ctx):
         nsfwCounter = 0 
         subreddit = await reddit.subreddit("nsfwanimegifs")
         nsfwList = []
-        async for submission in subreddit.hot(limit=200):
+        async for submission in subreddit.hot(limit=75):
             if checkIfGif(submission.url) == True:
                 nsfwList.append(submission) 
       
