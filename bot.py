@@ -124,7 +124,7 @@ async def help2(ctx):
 
 @help.command()
 async def mod(ctx):
-    em = discord.Embed(colour = discord.Colour.blue(),title = "Mod Commands", description = "Commands **ONLY** Mods can use")
+    em = discord.Embed(colour = discord.Colour.purple(),title = "Mod Commands", description = "Commands **ONLY** Mods can use")
 
     em.add_field(name = "**clear**", value =f"Deletes the amount of message(s) specified")
     em.add_field(name = "**kick**", value =f"Kicks the user you mentioned and gives a reason")
