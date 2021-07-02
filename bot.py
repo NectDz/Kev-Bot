@@ -39,11 +39,11 @@ async def on_member_remove(member):
 
 @client.command()
 async def msg(ctx,*,message):
-    response = await rs.get_ai_response(message)
+    response = rs.get_ai_response(message)
     
-    await message.reply(response)
+    await ctx.send(response)
 
-    await client.process_commands(message)
+    rs.close()
 
 
 # Meme 
