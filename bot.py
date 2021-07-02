@@ -207,7 +207,7 @@ async def _8ball(ctx,*,question):
 async def best(ctx,member):
     await ctx.send(f'{member} is the best!')
 
-num = [str(i) for i in range(1,20)]
+num = [str(i) for i in range(1,10)]
 
 # Dice command
 
