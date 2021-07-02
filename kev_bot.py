@@ -445,7 +445,7 @@ async def nsfw(ctx):
     gif = random.choice(lst)
 
     em = discord.Embed(color = discord.Colour.blue(),title = "KevBot NSFW")
-    em.set_image(url = nsfw)
+    em.set_image(url = gif)
 
     await ctx.send(embed = em)
 
