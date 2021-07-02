@@ -41,9 +41,9 @@ async def on_member_remove(member):
 async def msg(ctx,*,message):
     response = rs.get_ai_response(message)
     
-    await ctx.send(response)
+    print(response)
 
-    rs.close()
+    await rs.aclose()
 
 
 # Meme 
