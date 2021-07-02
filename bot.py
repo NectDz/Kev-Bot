@@ -114,11 +114,25 @@ async def help2(ctx):
     em.add_field(name = "**hug**", value = "Hugs the user you mentioned!")
     em.add_field(name = "**kill**", value = "Kills the user you mentioned! :smiling_imp:")
     em.add_field(name = "**fu**", value = "Tells the user you mentioned **FUCK YOU** :joy:")
-    em.add_field(name = "**shutup**", value = "Tells the user you mentioned to shut their mouth:exclamation:")
+    em.add_field(name = "**shutup**", value = "Tells the user you mentioned to shut their mouth")
 
     em.set_thumbnail(url = 'https://i.ibb.co/L0czQLQ/Bot-Avatar-2.png')
     em.set_footer(text=f'Page 2 out of 2')
     await ctx.send(embed = em)
+
+# Mod Commands 
+
+@help.command()
+async def mod(ctx):
+    em = discord.Embed(colour = discord.Colour.blue(),title = "Mod Commands", description = "Commands **ONLY** Mods can use")
+
+    em.add_field(name = "**clear**", value =f"Deletes the amount of message(s) specified")
+    em.add_field(name = "**kick**", value =f"Kicks the user you mentioned and gives a reason")
+    em.add_field(name = "**ban**", value =f"Bans the user you mentioned and gives a reason")
+    em.add_field(name = "**mute**", value =f"Mutes the user you mentioned and gives a reason")
+    em.add_field(name = "**unmute**", value =f"Unmutes the user you mentioned")
+    await ctx.send(embed =em)
+
 
 # Kick | Needs Client Command
 
@@ -274,10 +288,11 @@ async def cuddle(ctx,user):
         await ctx.send(f"Can't do not do that weirdo..." ) 
         return 
 
-
     cuddle  = random.choice(cuddleGifs)
-    await ctx.send(f'{ctx.author.mention} cuddles with {user}!')
-    await ctx.send(f'{cuddle}')
+    em = discord.Embed(colour = discord.Colour.red())
+    em.add_field(name = f"Cuddle Command",value = f'**{ctx.author.mention} cuddled with {user}!** :kissing_heart:')
+    em.set_image(url = cuddle)
+    await ctx.send(embed =em)
 
 
 # Kiss Command
