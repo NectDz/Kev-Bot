@@ -424,13 +424,13 @@ async def fu(ctx, user):
 
 # NSFW | No Help Command
 
-t = TenGiphPy.Tenor(token= os.environ['tenor_KEY'])
+
 
 @client.command()
 @commands.cooldown(1, 7, commands.BucketType.user)
 async def nsfw(ctx):
-
-    nsfw = await asyncio.run(t.arandom('nsfw'))
+    t = TenGiphPy.Tenor(token= os.environ['tenor_KEY'])
+    nsfw = t.random("nsfw")
 
     em = discord.Embed(color = discord.Colour.blue(),title = "KevBot NSFW")
     em.set_image(url = nsfw)
