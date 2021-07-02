@@ -134,7 +134,7 @@ async def kick(ctx, user: discord.Member,*, reason):
     await user.send('You have been kicked from the server!')
     await user.kick(reason =reason)
 
-# Ban |Needs Client Command 
+# Ban 
 
 @help.command()
 async def ban(ctx):
