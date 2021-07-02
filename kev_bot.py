@@ -423,21 +423,20 @@ async def fu(ctx, user):
     await ctx.send(embed =em)
 
 # NSFW | No Help Command
-"""
+
 nsfwCounter = 0 
 apiKey = os.environ['giphyKEY']
-api_instance = giphy_client.DefaultApi(apiKey, 'nsfw', limit=50, rating = 'r')
-api_response = api_instance.gifs_search_get('nsfw')
+api_instance = giphy_client.DefaultApi()
+api_response = api_instance.gifs_search_get(apiKey, 'nsfw', limit=50, rating = 'r')
 lst = list(api_response.data)
 
 @client.command()
-@commands.cooldown(1, 7, commands.BucketType.user)
+@commands.cooldown(1, 5, commands.BucketType.user)
 async def nsfw(ctx):
     global api_response, lst, nsfwCounter
 
     if nsfwCounter >= 75: 
-        api_instance = giphy_client.DefaultApi(apiKey, 'nsfw', limit=50, rating = 'r')
-        api_response = api_instance.gifs_search_get('nsfw')
+        api_response = api_instance.gifs_search_get(apiKey, 'nsfw', limit=50, rating = 'r')
         lst = list(api_response.data)
         nsfwCounter = 0 
 
@@ -446,10 +445,10 @@ async def nsfw(ctx):
     gif = random.choice(lst)
 
     em = discord.Embed(color = discord.Colour.blue(),title = "KevBot NSFW")
-    em.set_image(url = gif)
+    em.set_image(url = f'https://media.giphy.com/media/{gif.id}/giphy.gif')
 
     await ctx.send(embed = em)
-"""
+
 @help.command()
 async def shutup(ctx): 
     em = discord.Embed(colour = discord.Colour.blue(),title = "Cry Command", description = "Shows a crying gif ")
