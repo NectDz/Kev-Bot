@@ -6,7 +6,7 @@ from discord.ext import commands
 from discord.ext.commands import bot
 from gifs import cuddleGifs,hugGifs,slapGifs,sexyGifs,kissGifs,beanerGifs,crackerGifs, gmGifs, gnGifs, killGifs, cryGifs, fuckYouGifs
 from check import checkIfGif
-
+import os
 import time, random
 import asyncpraw
 
@@ -414,4 +414,4 @@ async def nsfw(ctx):
 
 
 
-client.run('NzI2ODQxODgyOTM1Njg5MjY2.XvjKQA.KaPvHGFSWQe_yg1SA6JlCJkoTkw')
+client.run(os.environ['DISCORD_BOT_TOKEN'])
