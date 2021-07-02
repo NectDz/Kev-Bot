@@ -38,7 +38,7 @@ async def on_member_remove(member):
 # Bot 
 
 @client.command()
-async def on_message(ctx,*,message):
+async def msg(ctx,*,message):
 
     if client.user == message.author: 
         return
