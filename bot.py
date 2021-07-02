@@ -1,14 +1,10 @@
-from math import cos
+
 import discord
-from discord import colour
-from discord.embeds import Embed
 from discord.ext import commands
-from discord.ext.commands import bot
 from gifs import cuddleGifs,hugGifs,slapGifs,sexyGifs,kissGifs,beanerGifs,crackerGifs, gmGifs, gnGifs, killGifs, cryGifs, fuckYouGifs
 from check import checkIfGif
-import os
-import time, random
-import asyncpraw
+import time, random, os, asyncpraw 
+from prsaw import RandomStuff
 
 memeCounter = 0 
 
@@ -25,6 +21,8 @@ botPrefix = ",kg "
 client = commands.Bot(command_prefix= botPrefix, case_insensitive=True)
 client.remove_command('help')
 
+rs = RandomStuff(async_mode= True)
+
 @client.event
 async def on_ready():
     print("Bot is ready!")
@@ -36,6 +34,21 @@ async def on_member_join(member):
 @client.event
 async def on_member_remove(member):
     print(f'{member} is gone!.')
+
+# Bot 
+
+@client.command()
+async def on_message(ctx,*,message):
+
+    if client.user == message.author: 
+        return
+
+    response = await rs.get_ai_response(message.content)
+    
+    await message.reply(response)
+
+    await client.process_commands(message)
+
 
 # Meme 
 
