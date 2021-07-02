@@ -110,7 +110,7 @@ async def help(ctx):
 
 @help.command(aliases=['2'])
 async def help2(ctx):    
-    em = discord.Embed(colour = discord.Colour.gold(),title = "Help2", description = "Use **Ex: ,kg <command>** to use a command\nDo **,kg help <command>** to see how to use the command")
+    em = discord.Embed(colour = discord.Colour.gold(),title = "Help2", description = "Use **,kg <command>** to use a command\nDo **,kg help <command>** to see how to use the command")
     em.add_field(name = "**hug**", value = "Hugs the user you mentioned!")
     em.add_field(name = "**kill**", value = "Kills the user you mentioned! :smiling_imp:")
     em.add_field(name = "**fu**", value = "Tells the user you mentioned **FUCK YOU** :joy:")
@@ -130,9 +130,9 @@ async def kick(ctx):
 
 @client.command()
 @commands.has_permissions(kick_members=True)
-async def kick(ctx, user: discord.Member):
-    await ctx.guild.kick(user)
-    await ctx.send(f"{user} Just got kicked")
+async def kick(ctx, user: discord.Member,*, reason):
+    await user.send('You have been kicked from the server!')
+    await user.kick(reason =reason)
 
 # Ban |Needs Client Command 
 
