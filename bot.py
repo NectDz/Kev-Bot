@@ -131,6 +131,9 @@ async def mod(ctx):
     em.add_field(name = "**ban**", value =f"Bans the user you mentioned and gives a reason")
     em.add_field(name = "**mute**", value =f"Mutes the user you mentioned and gives a reason")
     em.add_field(name = "**unmute**", value =f"Unmutes the user you mentioned")
+
+    em.set_thumbnail(url = 'https://i.ibb.co/L0czQLQ/Bot-Avatar-2.png')
+    em.set_footer(text=f"KevBot Created by NectDzN aka 'KingKev'")
     await ctx.send(embed =em)
 
 
