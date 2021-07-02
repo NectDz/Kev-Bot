@@ -430,7 +430,7 @@ t = TenGiphPy.Tenor(token= os.environ['tenor_KEY'])
 @commands.cooldown(1, 7, commands.BucketType.user)
 async def nsfw(ctx):
 
-    nsfw = asyncio.run(t.arandom('nsfw'))
+    nsfw = await asyncio.run(t.arandom('nsfw'))
 
     em = discord.Embed(color = discord.Colour.blue(),title = "KevBot NSFW")
     em.set_image(url = nsfw)
