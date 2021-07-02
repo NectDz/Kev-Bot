@@ -39,7 +39,7 @@ async def on_member_remove(member):
 
 @client.command()
 async def msg(ctx,*,message):
-    response = await rs.get_ai_response(message.content)
+    response = await rs.get_ai_response(message)
     
     await message.reply(response)
 
