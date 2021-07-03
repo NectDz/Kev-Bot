@@ -111,7 +111,7 @@ async def help(ctx):
     em.add_field(name = "**cuddle**", value = "Cuddle with the user you mentioned! :heart:")
 
     em.set_thumbnail(url = 'https://i.imgur.com/mrwjkRC.png')
-    em.set_footer(text=f'Page 1 out of 2')
+    em.set_footer(text=f'Page 1 out of 3')
     await ctx.send(embed = em)
 
 @help.command(aliases=['2'])
@@ -125,7 +125,18 @@ async def help2(ctx):
     em.add_field(name = "**gn**", value = "Says GoodNight to your favorite person!")
 
     em.set_thumbnail(url = 'https://i.imgur.com/mrwjkRC.png')
-    em.set_footer(text=f'Page 2 out of 2')
+    em.set_footer(text=f'Page 2 out of 3')
+    await ctx.send(embed = em)
+
+@help.command(aliases=['3'])
+async def help3(ctx):    
+    em = discord.Embed(colour = discord.Colour.gold(),title = "Help2", description = "Use **!kg <command>** to use a command\nDo **!kg help <command>** to see how to use the command")
+    em.add_field(name = "**jail**", value = "Puts the user you mentioned in Jail!")
+    em.add_field(name = "**howgay**", value = "Tells you how gay the user you mentioned is 🏳️‍🌈")
+
+
+    em.set_thumbnail(url = 'https://i.imgur.com/mrwjkRC.png')
+    em.set_footer(text=f'Page 3 out of 3')
     await ctx.send(embed = em)
 
 # Mod Commands 
@@ -385,8 +396,6 @@ async def kiss(ctx,user):
     em.add_field(name = f"Kiss Command",value = f'**{ctx.author.mention} kissed {user}!** :kissing_heart:')
     em.set_image(url = kiss)
     await ctx.send(embed =em)
-
- 
 
 # Beaner Command 
 
