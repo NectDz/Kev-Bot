@@ -548,4 +548,16 @@ async def shutup(ctx, user):
     em.set_image(url = shutup)
     await ctx.send(embed =em)
 
+gayMeter = [i for i in range(1,101)]
+
+@client.command()
+@commands.cooldown(1, 10, commands.BucketType.user)
+async def howgay(ctx, user):
+    if str(user) == "@everyone" or str(user) == ctx.author.mention:
+        await ctx.message.add_reaction('🤔')
+        return
+    em = discord.Embed(colour = discord.Colour.purple())
+    em.add_field(name = f"Gay Meter",value = f'{user} is {random.choice(gayMeter)}% gay 🏳️‍🌈!')
+    await ctx.send(embed =em)
+
 client.run(os.environ['DISCORD_BOT_TOKEN'])
