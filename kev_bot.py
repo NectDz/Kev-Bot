@@ -120,8 +120,8 @@ async def help2(ctx):
     em.add_field(name = "**kill**", value = "Kills the user you mentioned! :smiling_imp:")
     em.add_field(name = "**fu**", value = "Tells the user you mentioned **FUCK YOU** :joy:")
     em.add_field(name = "**shutup**", value = "Tells the user you mentioned to shut their mouth")
-    em.add_field(name = "**gm**", value = "Tells the user you mentioned to shut their mouth")
-    em.add_field(name = "**gn**", value = "Tells the user you mentioned to shut their mouth")
+    em.add_field(name = "**gm**", value = "Says GoodMorning to your favorite person!")
+    em.add_field(name = "**gn**", value = "Says GoodNight to your favorite person!")
 
     em.set_thumbnail(url = 'https://i.imgur.com/mrwjkRC.png')
     em.set_footer(text=f'Page 2 out of 2')
@@ -155,6 +155,10 @@ async def kick(ctx):
 @client.command()
 @commands.has_permissions(kick_members=True)
 async def kick(ctx, user: discord.Member,*, reason):
+    if str(user) == "@everyone" or str(user) == ctx.author.mention:
+        await ctx.message.add_reaction('🤔')
+        return
+
     await user.send('You have been kicked from the server!')
     await user.kick(reason =reason)
 
@@ -171,6 +175,11 @@ async def ban(ctx):
 @client.command()
 @commands.has_permissions(ban_members=True)
 async def ban(ctx, user: discord.Member,*, reason):
+    if str(user) == "@everyone" or str(user) == ctx.author.mention:
+        await ctx.message.add_reaction('🤔')
+        return
+
+
     await ctx.send(f"{user} has been banned by {ctx.author.mention}")
     await user.ban(reason =reason)
 
@@ -242,15 +251,28 @@ async def unmute(ctx, member : discord.Member):
 
 @client.command()
 async def gm(ctx, user):
-    goodMorning = gmGifs
-    await ctx.send(f'{ctx.author.mention} says GoodMorning to you {user}!')
-    await ctx.send(f'{random.choice(goodMorning)}')
+    if str(user) == "@everyone" or str(user) == ctx.author.mention:
+        await ctx.message.add_reaction('🤔')
+        return 
+
+    em = discord.Embed(colour = discord.Colour.red())
+    em.add_field(name = f"GoodMorning Command",value = f'**{ctx.author.mention} saying GoodMorning to {user}!**')
+    em.set_image(url = random.choice(gmGifs))
+    await ctx.send(embed = em )
+
 
 @client.command()
 async def gn(ctx, user):
-    goodNight = gnGifs
-    await ctx.send(f'{ctx.author.mention} says GoodNight to you {user}!')
-    await ctx.send(f'{random.choice(goodNight)}')
+
+    if str(user) == "@everyone" or str(user) == ctx.author.mention:
+        await ctx.message.add_reaction('🤔')
+        return 
+
+    em = discord.Embed(colour = discord.Colour.red())
+    em.add_field(name = f"GoodNight Command",value = f'**{ctx.author.mention} saying GoodNight to {user}!**')
+    em.set_image(url = random.choice(gnGifs))
+
+    await ctx.send(embed = em )
 
 # Ping Command
 @client.command()
@@ -283,17 +305,13 @@ async def dice(ctx,*,diceNum):
     time.sleep(0.5)
     await ctx.send(f'You are {correct}\n{numberWord} was the answer!')
 
-@client.command()
-async def worst(ctx,member):
-    await ctx.send(f'{member} is the worst and sucks peepee!')
-
 # Slap command
 
 @client.command()
 @commands.cooldown(1, 10, commands.BucketType.user)
 async def slap(ctx,user):
     if str(user) == "@everyone":
-        await ctx.send(f'Do not do that...' )
+        await ctx.message.add_reaction('🤔')
         return
 
     slap  = random.choice(slapGifs)
@@ -321,7 +339,7 @@ async def hug(ctx):
 @commands.cooldown(1, 10, commands.BucketType.user)
 async def hug(ctx,user):
     if str(user) == "@everyone" or str(user) == ctx.author.mention:
-        await ctx.send(f"Can't do not do that..." ) 
+        await ctx.message.add_reaction('🤔')
         return 
 
 
@@ -379,9 +397,10 @@ async def beaner(ctx):
 @client.command()
 @commands.cooldown(1, 10, commands.BucketType.user)
 async def beaner(ctx,user):
-    if str(user) == "@everyone":
-        await ctx.send(f'Do not do that...' ) 
-        return 
+    if str(user) == "@everyone" or str(user) == ctx.author.mention:
+        await ctx.message.add_reaction('🤔')
+        return
+
 
     beaner  = random.choice(beanerGifs)
     em = discord.Embed(colour = discord.Colour.red())
@@ -401,8 +420,9 @@ async def cracker(ctx):
 @commands.cooldown(1, 10, commands.BucketType.user)
 async def cracker(ctx,user):
     if str(user) == "@everyone" or str(user) == ctx.author.mention:
-        await ctx.send(f"Can't do not do that..." ) 
-        return 
+        await ctx.message.add_reaction('🤔')
+        return
+
 
 
     cracker  = random.choice(crackerGifs)
@@ -423,8 +443,9 @@ async def kill(ctx):
 @commands.cooldown(1, 10, commands.BucketType.user)
 async def kill(ctx,user):
     if str(user) == "@everyone" or str(user) == ctx.author.mention:
-        await ctx.send(f"Can't do not do that..." ) 
-        return 
+        await ctx.message.add_reaction('🤔')
+        return
+
 
     kill  = random.choice(killGifs)
     em = discord.Embed(colour = discord.Colour.red())
@@ -460,6 +481,11 @@ async def fu(ctx):
 @client.command()
 @commands.cooldown(1, 10, commands.BucketType.user)
 async def fu(ctx, user):
+    if str(user) == "@everyone" or str(user) == ctx.author.mention:
+        await ctx.message.add_reaction('🤔')
+        return
+
+
     fuck  = random.choice(fuckYouGifs)
     em = discord.Embed(colour = discord.Colour.red())
     em.add_field(name = f"Fuck You Command",value = f'**{ctx.author.mention} says FUCK YOU to {user}**')
@@ -502,6 +528,10 @@ async def shutup(ctx):
 @client.command()
 @commands.cooldown(1, 10, commands.BucketType.user)
 async def shutup(ctx, user):
+    if str(user) == "@everyone" or str(user) == ctx.author.mention:
+        await ctx.message.add_reaction('🤔')
+        return
+
     shutup  = random.choice(shutUpGifs)
     em = discord.Embed(colour = discord.Colour.red())
     em.add_field(name = f"ShutUp Command",value = f'**{ctx.author.mention} told {user} to shut up!**')
