@@ -109,7 +109,7 @@ async def help(ctx):
     em.add_field(name = "**slap**", value = "Slaps the user you mentioned!")
     em.add_field(name = "**cuddle**", value = "Cuddle with the user you mentioned! :heart:")
 
-    em.set_thumbnail(url = 'https://i.ibb.co/L0czQLQ/Bot-Avatar-2.png')
+    em.set_thumbnail(url = 'https://pasteboard.co/K9nRjH7.png')
     em.set_footer(text=f'Page 1 out of 2')
     await ctx.send(embed = em)
 
@@ -123,7 +123,7 @@ async def help2(ctx):
     em.add_field(name = "**gm**", value = "Tells the user you mentioned to shut their mouth")
     em.add_field(name = "**gn**", value = "Tells the user you mentioned to shut their mouth")
 
-    em.set_thumbnail(url = 'https://i.ibb.co/L0czQLQ/Bot-Avatar-2.png')
+    em.set_thumbnail(url = 'https://pasteboard.co/K9nRjH7.png')
     em.set_footer(text=f'Page 2 out of 2')
     await ctx.send(embed = em)
 
