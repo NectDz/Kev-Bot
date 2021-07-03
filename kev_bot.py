@@ -62,15 +62,14 @@ async def meme(ctx):
     memeCounter += 1
 
     random_sub = random.choice(allSubs)
-    allSubs.pop(random_sub)
-    
+
     name = random_sub.title
     url = random_sub.url
     em = discord.Embed(color = discord.Colour.blue(),title = ":100: KevBot Meme :100:", description = name)
     em.set_image(url = url)
 
     await ctx.send(embed = em)
-
+    allSubs.pop(random_sub)
 
 # Gaming
 gamingList = []
