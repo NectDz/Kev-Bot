@@ -50,7 +50,7 @@ async def on_command_error(ctx, error):
 @client.command()
 async def meme(ctx):
     global allSubs, memeCounter
-    if len(allSubs) == 0 or memeCounter >= 75:
+    if len(allSubs) == 0:
         memeCounter = 0
         subreddit = await reddit.subreddit("memes")
         allSubs =[]
@@ -62,7 +62,8 @@ async def meme(ctx):
     memeCounter += 1
 
     random_sub = random.choice(allSubs)
-
+    allSubs.pop(random_sub)
+    
     name = random_sub.title
     url = random_sub.url
     em = discord.Embed(color = discord.Colour.blue(),title = ":100: KevBot Meme :100:", description = name)
