@@ -116,7 +116,7 @@ async def help(ctx):
 
 @help.command(aliases=['2'])
 async def help2(ctx):    
-    em = discord.Embed(colour = discord.Colour.gold(),title = "Help2", description = "Use **!kg <command>** to use a command\nDo **!kg help <command>** to see how to use the command")
+    em = discord.Embed(colour = discord.Colour.gold(),title = "Help 2", description = "Use **!kg <command>** to use a command\nDo **!kg help <command>** to see how to use the command")
     em.add_field(name = "**hug**", value = "Hugs the user you mentioned!")
     em.add_field(name = "**kill**", value = "Kills the user you mentioned! :smiling_imp:")
     em.add_field(name = "**fu**", value = "Tells the user you mentioned **FUCK YOU** :joy:")
@@ -130,7 +130,7 @@ async def help2(ctx):
 
 @help.command(aliases=['3'])
 async def help3(ctx):    
-    em = discord.Embed(colour = discord.Colour.gold(),title = "Help2", description = "Use **!kg <command>** to use a command\nDo **!kg help <command>** to see how to use the command")
+    em = discord.Embed(colour = discord.Colour.gold(),title = "Help 3", description = "Use **!kg <command>** to use a command\nDo **!kg help <command>** to see how to use the command")
     em.add_field(name = "**jail**", value = "Puts the user you mentioned in Jail!")
     em.add_field(name = "**howgay**", value = "Tells you how gay the user you mentioned is 🏳️‍🌈")
 
@@ -528,6 +528,8 @@ async def nsfw(ctx):
     em.set_image(url = f'https://media.giphy.com/media/{gif.id}/giphy.gif')
 
     await ctx.send(embed = em)
+
+# Shut up
 
 @help.command()
 async def shutup(ctx): 
