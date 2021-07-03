@@ -16,7 +16,7 @@ reddit = asyncpraw.Reddit(client_id = os.environ['clientID'],
                      password = os.environ['redditPass'],
                      user_agent= os.environ['userAgent'])
 
-botPrefix = ",kg "
+botPrefix = "!kg "
 
 client = commands.Bot(command_prefix= botPrefix, case_insensitive=True)
 client.remove_command('help')
@@ -101,7 +101,7 @@ async def gaming(ctx):
 @client.group(invoke_without_command = True)
 async def help(ctx):
     
-    em = discord.Embed(colour = discord.Colour.gold(),title = "Help", description = "Use **,kg <command>** to use a command\nDo **,kg help <command>** to see how to use the command")
+    em = discord.Embed(colour = discord.Colour.gold(),title = "Help", description = "Use **!kg <command>** to use a command\nDo **!kg help <command>** to see how to use the command")
     em.add_field(name = "**kiss**", value = "Kisses the user you mentioned :kissing_heart:")
     em.add_field(name = "**meme**", value = "Sends a random meme :laughing:")
     em.add_field(name = "**nsfw**", value = "Sends a NSFW **(Use in NSFW)** :eyes:")
@@ -115,7 +115,7 @@ async def help(ctx):
 
 @help.command(aliases=['2'])
 async def help2(ctx):    
-    em = discord.Embed(colour = discord.Colour.gold(),title = "Help2", description = "Use **,kg <command>** to use a command\nDo **,kg help <command>** to see how to use the command")
+    em = discord.Embed(colour = discord.Colour.gold(),title = "Help2", description = "Use **!kg <command>** to use a command\nDo **!kg help <command>** to see how to use the command")
     em.add_field(name = "**hug**", value = "Hugs the user you mentioned!")
     em.add_field(name = "**kill**", value = "Kills the user you mentioned! :smiling_imp:")
     em.add_field(name = "**fu**", value = "Tells the user you mentioned **FUCK YOU** :joy:")
