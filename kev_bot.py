@@ -1,5 +1,6 @@
 
 import discord
+from discord import embeds
 from discord.ext import commands
 from gifs import cuddleGifs,hugGifs,slapGifs,sexyGifs,kissGifs,beanerGifs,crackerGifs, gmGifs, gnGifs, killGifs, cryGifs, fuckYouGifs, shutUpGifs
 from check import checkIfGif
@@ -38,7 +39,10 @@ async def on_member_remove(member):
 async def on_command_error(ctx, error):
     if isinstance(error, commands.errors.CommandOnCooldown):  
         # isinstance is used to compare 2 thing. If they are the same it returns True in this case were comparing if the error is equal to the other error
-        return await ctx.send('The command **{}** is still on cooldown for {:.2f}'.format(ctx.command.name, error.retry_after))
+        em = discord.Embed(color = discord.Colour.blue(),
+        title = "Slow down there partner...", description = 'The command **{}** is still on cooldown for {:.2f}'.format(ctx.command.name, error.retry_after))
+        await ctx.send(embed = em)
+
 
 # Meme 
 
@@ -116,6 +120,8 @@ async def help2(ctx):
     em.add_field(name = "**kill**", value = "Kills the user you mentioned! :smiling_imp:")
     em.add_field(name = "**fu**", value = "Tells the user you mentioned **FUCK YOU** :joy:")
     em.add_field(name = "**shutup**", value = "Tells the user you mentioned to shut their mouth")
+    em.add_field(name = "**gm**", value = "Tells the user you mentioned to shut their mouth")
+    em.add_field(name = "**gn**", value = "Tells the user you mentioned to shut their mouth")
 
     em.set_thumbnail(url = 'https://i.ibb.co/L0czQLQ/Bot-Avatar-2.png')
     em.set_footer(text=f'Page 2 out of 2')
@@ -191,6 +197,44 @@ async def clear(ctx, amount : int):
         return 
     else :  
         await ctx.send("That amount is too damn high!")
+
+# Mute 
+
+@help.command()
+async def mute(ctx):
+    em = discord.Embed(colour = discord.Colour.blue(),title = "Mute Command", description = "Mutes user")
+
+    em.add_field(name = "**Syntax**", value =f"{botPrefix} mute @<user>")
+
+    await ctx.send(embed =em)
+
+@client.command()
+@commands.has_permissions(kick_members=True)
+async def mute(ctx, member : discord.Member):
+    muted_role = ctx.guild.get_role(860677993894903829)
+
+    await member.add_roles(muted_role)
+
+    await ctx.send(member.mention + " has been muted")
+
+# Unmute
+
+@help.command()
+async def unmute(ctx):
+    em = discord.Embed(colour = discord.Colour.blue(),title = "UnMute Command", description = "UnMutes user")
+
+    em.add_field(name = "**Syntax**", value =f"{botPrefix} unmute @<user>")
+
+    await ctx.send(embed =em)
+
+@client.command()
+@commands.has_permissions(kick_members=True)
+async def unmute(ctx, member : discord.Member):
+    muted_role = ctx.guild.get_role(860677993894903829)
+    await member.remove_role(muted_role)
+
+    await ctx.send(member.mention + " has been unmuted")
+
 
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -460,7 +504,7 @@ async def shutup(ctx):
 async def shutup(ctx, user):
     shutup  = random.choice(shutUpGifs)
     em = discord.Embed(colour = discord.Colour.red())
-    em.add_field(name = f"Fuck You Command",value = f'**{ctx.author.mention} says FUCK YOU to {user}**')
+    em.add_field(name = f"ShutUp Command",value = f'**{ctx.author.mention} told {user} to shut up!**')
     em.set_image(url = shutup)
     await ctx.send(embed =em)
 
