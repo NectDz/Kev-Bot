@@ -205,7 +205,7 @@ async def clear(ctx):
     em.add_field(name = "**Syntax**", value =f"{botPrefix} clear <amount>")
 
     await ctx.send(embed =em)
-
+#
 @client.command()
 @commands.has_permissions(kick_members=True)
 async def clear(ctx, amount : int):
