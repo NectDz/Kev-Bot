@@ -562,4 +562,17 @@ async def howgay(ctx, user):
     em.add_field(name = f"Gay Meter",value = f'{user} is {random.choice(gayMeter)}% gay 🏳️‍🌈!')
     await ctx.send(embed =em)
 
+@client.command()
+@commands.cooldown(1, 10, commands.BucketType.user)
+async def sheesh(ctx, user):
+    if str(user) == "@everyone" or str(user) == ctx.author.mention:
+        await ctx.message.add_reaction('🤔')
+        return
+    
+    print(user.id, False)
+    print(str(user), True)
+    print(user.bot, True)
+    print(str(user.status).title(), True)
+  
+
 client.run(os.environ['DISCORD_BOT_TOKEN'])
