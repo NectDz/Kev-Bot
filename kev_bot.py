@@ -569,10 +569,14 @@ async def sheesh(ctx, user):
         await ctx.message.add_reaction('🤔')
         return
     
-    print(user.id, False)
-    print(str(user), True)
-    print(user.bot, True)
-    print(str(user.status).title(), True)
+    guild = client.get_guild(829751693640990780)
+
+    member = guild.get_member(user)
+
+    if member is None:
+        await ctx.send('Member is not in the server')
+    else:
+        await ctx.send('Member is in the server')
   
 
 client.run(os.environ['DISCORD_BOT_TOKEN'])
