@@ -564,7 +564,7 @@ async def howgay(ctx, user):
 
 @client.command()
 @commands.cooldown(1, 10, commands.BucketType.user)
-async def sheesh(ctx, user):
+async def sheesh(ctx, user: int):
     if str(user) == "@everyone" or str(user) == ctx.author.mention:
         await ctx.message.add_reaction('🤔')
         return
