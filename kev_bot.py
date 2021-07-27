@@ -299,8 +299,8 @@ async def _8ball(ctx,*,question):
 
 # Best Command
 @client.command()
-async def king(ctx):
-    await ctx.send(f'@KingKev is the King!')
+async def king(ctx,user):
+    await ctx.send(f'@{user} DO NOT EVER SPEAK TO THE KING (KingKev aka NectDzN) LIKE THAT, HE IS KING!')
 
 num = [str(i) for i in range(1,10)]
 
