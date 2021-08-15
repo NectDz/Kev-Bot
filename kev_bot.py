@@ -9,7 +9,7 @@ from giphy_client.rest import ApiException
 memeCounter = 0 
 
 allSubs = []
-
+#
 reddit = asyncpraw.Reddit(client_id = os.environ['clientID'],
                      client_secret = os.environ['clientSecret'],
                      username = os.environ['redditUser'],
