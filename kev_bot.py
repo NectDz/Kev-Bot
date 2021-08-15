@@ -577,6 +577,24 @@ async def sheesh(ctx, user: int):
         await ctx.send('Member is not in the server')
     else:
         await ctx.send('Member is in the server')
-  
+        
+@help.command()
+async def edp(ctx): 
+    em = discord.Embed(colour = discord.Colour.blue(),title = "EDP Command", description = "Go EDP mode! ")
+    em.add_field(name = "**Syntax**", value =f"{botPrefix} edp")
+    await ctx.send(embed =em)
+
+@client.command()
+@commands.cooldown(1, 5, commands.BucketType.user)
+async def edp(ctx, user):
+    if str(user) == "@everyone" or str(user) == ctx.author.mention:
+        await ctx.message.add_reaction('🤔')
+        return
+
+    edp  = random.choice(EDPGifs)
+    em = discord.Embed(colour = discord.Colour.red())
+    em.add_field(name = f"EDP Command",value = f'**{ctx.author.mention} went EDP mode!')
+    em.set_image(url = edp)
+    await ctx.send(embed =em)
 
 client.run(os.environ['DISCORD_BOT_TOKEN'])
