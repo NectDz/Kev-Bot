@@ -44,7 +44,6 @@ async def on_command_error(ctx, error):
         title = "Slow down there partner...", description = 'The command **{}** is still on cooldown for {:.2f}'.format(ctx.command.name, error.retry_after))
         await ctx.send(embed = em)
 
-
 # Meme 
 
 @client.command()
@@ -133,7 +132,7 @@ async def help3(ctx):
     em = discord.Embed(colour = discord.Colour.gold(),title = "Help 3", description = "Use **!kg <command>** to use a command\nDo **!kg help <command>** to see how to use the command")
     em.add_field(name = "**jail**", value = "Puts the user you mentioned in Jail!")
     em.add_field(name = "**howgay**", value = "Tells you how gay the user you mentioned is 🏳️‍🌈")
-
+    em.add_field(name = "**edp**", value = "Use this when someone goes edp mode!")
 
     em.set_thumbnail(url = 'https://i.imgur.com/mrwjkRC.png')
     em.set_footer(text=f'Page 3 out of 3')
@@ -206,7 +205,6 @@ async def clear(ctx):
 @client.command()
 @commands.has_permissions(kick_members=True)
 async def clear(ctx, amount : int):
-
     amount += 1
 
     if amount <= 85: 
@@ -372,7 +370,6 @@ async def cuddle(ctx,user):
     em.set_image(url = cuddle)
     await ctx.send(embed =em)
 
-
 # Kiss Command
 
 @help.command()
@@ -449,7 +446,6 @@ async def kill(ctx,user):
     if str(user) == "@everyone" or str(user) == ctx.author.mention:
         await ctx.message.add_reaction('🤔')
         return
-
 
     kill  = random.choice(killGifs)
     em = discord.Embed(colour = discord.Colour.red())
@@ -579,16 +575,16 @@ async def sheesh(ctx, user: int):
         
 @help.command()
 async def edp(ctx): 
-    em = discord.Embed(colour = discord.Colour.blue(),title = "EDP Command", description = "Go EDP mode! ")
-    em.add_field(name = "**Syntax**", value =f"{botPrefix} edp")
+    em = discord.Embed(colour = discord.Colour.blue(),title = "EDP Command", description = "When someone goes EDP Mode use this! ")
+    em.add_field(name = "**Syntax**", value =f"{botPrefix} edp @<user>")
     await ctx.send(embed =em)
 
 @client.command()
 @commands.cooldown(1, 5, commands.BucketType.user)
-async def edp(ctx):
+async def edp(ctx, user):
     edp  = random.choice(EDPGifs)
     em = discord.Embed(colour = discord.Colour.red())
-    em.add_field(name = f"EDP Command",value = f'**{ctx.author.mention}** went EDP mode!')
+    em.add_field(name = f"EDP Command",value = f'**{ctx.author.mention}** says {user} went EDP Mode!')
     em.set_image(url = edp)
     await ctx.send(embed =em)
 
