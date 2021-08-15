@@ -586,7 +586,7 @@ async def edp(ctx):
 
 @client.command()
 @commands.cooldown(1, 5, commands.BucketType.user)
-async def edp(ctx, user):
+async def edp(ctx):
     if str(user) == "@everyone" or str(user) == ctx.author.mention:
         await ctx.message.add_reaction('🤔')
         return
