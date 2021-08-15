@@ -587,11 +587,8 @@ async def edp(ctx):
 @client.command()
 @commands.cooldown(1, 5, commands.BucketType.user)
 async def edp(ctx):
-    if str(user) == "@everyone" or str(user) == ctx.author.mention:
-        await ctx.message.add_reaction('🤔')
-        return
-
     edp  = random.choice(EDPGifs)
+    print(edp)
     em = discord.Embed(colour = discord.Colour.red())
     em.add_field(name = f"EDP Command",value = f'**{ctx.author.mention} went EDP mode!')
     em.set_image(url = edp)
