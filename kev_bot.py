@@ -202,7 +202,7 @@ async def clear(ctx):
     em.add_field(name = "**Syntax**", value =f"{botPrefix} clear <amount>")
 
     await ctx.send(embed =em)
-#
+
 @client.command()
 @commands.has_permissions(kick_members=True)
 async def clear(ctx, amount : int):
@@ -408,7 +408,6 @@ async def beaner(ctx,user):
         await ctx.message.add_reaction('🤔')
         return
 
-
     beaner  = random.choice(beanerGifs)
     em = discord.Embed(colour = discord.Colour.red())
     em.add_field(name = f"Beaner Command",value = f'**{ctx.author.mention} called {user} a beaner! :poop:**')
@@ -429,8 +428,6 @@ async def cracker(ctx,user):
     if str(user) == "@everyone" or str(user) == ctx.author.mention:
         await ctx.message.add_reaction('🤔')
         return
-
-
 
     cracker  = random.choice(crackerGifs)
     em = discord.Embed(colour = discord.Colour.red())
@@ -498,12 +495,18 @@ async def fu(ctx, user):
     em.set_image(url = fuck)
     await ctx.send(embed =em)
 
-# NSFW | No Help Command
+# NSFW 
+
+@help.command()
+async def nsfw(ctx): 
+    em = discord.Embed(colour = discord.Colour.blue(),title = "NSFW Command", description = "Shows a NSFW photo")
+    em.add_field(name = "**Syntax**", value =f"{botPrefix} NSFW")
+    await ctx.send(embed =em)
 
 nsfwCounter = 0 
 apiKey = os.environ['giphyKEY']
 api_instance = giphy_client.DefaultApi()
-api_response = api_instance.gifs_search_get(apiKey, 'hot girls', limit=50, rating = 'r')
+api_response = api_instance.gifs_search_get(apiKey, 'nude girls', limit=50, rating = 'r')
 lst = list(api_response.data)
 
 @client.command()
