@@ -155,9 +155,6 @@ async def mod(ctx):
     em.set_footer(text=f"KGBot Created by NectDzN aka 'KingKev'")
     await ctx.send(embed =em)
 
-
-# Kick | Needs Client Command
-
 @help.command()
 async def kick(ctx):
     em = discord.Embed(colour = discord.Colour.blue(),title = "Kick Command", description = "Kicks a member from the server")
@@ -494,7 +491,6 @@ async def fu(ctx, user):
     if str(user) == "@everyone" or str(user) == ctx.author.mention:
         await ctx.message.add_reaction('🤔')
         return
-
 
     fuck  = random.choice(fuckYouGifs)
     em = discord.Embed(colour = discord.Colour.red())
