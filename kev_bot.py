@@ -588,7 +588,6 @@ async def edp(ctx):
 @commands.cooldown(1, 5, commands.BucketType.user)
 async def edp(ctx):
     edp  = random.choice(EDPGifs)
-    print(edp)
     em = discord.Embed(colour = discord.Colour.red())
     em.add_field(name = f"EDP Command",value = f'**{ctx.author.mention}** went EDP mode!')
     em.set_image(url = edp)
