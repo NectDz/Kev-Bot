@@ -590,7 +590,7 @@ async def edp(ctx):
     edp  = random.choice(EDPGifs)
     print(edp)
     em = discord.Embed(colour = discord.Colour.red())
-    em.add_field(name = f"EDP Command",value = f'**{ctx.author.mention} went EDP mode!')
+    em.add_field(name = f"EDP Command",value = f'**{ctx.author.mention}** went EDP mode!')
     em.set_image(url = edp)
     await ctx.send(embed =em)
 
