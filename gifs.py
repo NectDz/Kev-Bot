@@ -194,3 +194,15 @@ shutUpGifs = ['https://media.tenor.com/images/9072f8795acccc181418d543ba3e6185/t
               'https://media.tenor.com/images/ab3dd9ddb1d058cfc835ebc280aa94b4/tenor.gif',
               'https://media.tenor.com/images/ad15703d6819b78a6a5ffe416b5488ab/tenor.gif',
               'https://media.tenor.com/images/620c6775c1440af8971bf79b12505b97/tenor.gif']
+
+EDPGifs = ['https://c.tenor.com/XZXAZgaDexsAAAAC/edp445-eagles.gif',
+           'https://c.tenor.com/OM8U0Y9caVUAAAAM/wtf-edp-huh.gif',
+           'https://c.tenor.com/nEmjbJT0hGUAAAAd/5unwo-edp.gif',
+           'https://c.tenor.com/BjSjgWS0d2wAAAAC/edp-edp445.gif',
+           'https://c.tenor.com/AlywRKRInesAAAAM/edp.gif',
+           'https://c.tenor.com/vwVA7UPJOwIAAAAd/edp-i-missed-her-age.gif',
+           'https://c.tenor.com/bw4GYFx5mOIAAAAd/edp-edp445.gif',
+           'https://c.tenor.com/GqDuEgxhgqAAAAAC/edp-fistbump.gif',
+           'https://c.tenor.com/K9QmMWWdk88AAAAC/edp-edp-burner.gif',
+           'https://c.tenor.com/T2lMzW9WdicAAAAC/amogli-edp445.gif',
+           'https://c.tenor.com/AlywRKRInesAAAAd/edp.gif']
