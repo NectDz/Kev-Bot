@@ -6,7 +6,7 @@ from gifs import cuddleGifs,hugGifs,slapGifs,sexyGifs,kissGifs,beanerGifs,cracke
 from check import checkIfGif
 import time, random, os, asyncpraw, giphy_client
 from giphy_client.rest import ApiException
-
+import asyncio
 memeCounter = 0 
 allSubs = []
 
@@ -587,5 +587,30 @@ async def edp(ctx, user):
     em.add_field(name = f"EDP Command",value = f'**{ctx.author.mention}** says {user} went EDP Mode!')
     em.set_image(url = edp)
     await ctx.send(embed =em)
+
+# Snipe Command - If you see this you a gay ass nigga.
+
+snipe_message_author = {}
+snipe_message_content = {}
+ 
+@client.event
+async def on_message_delete(message):
+     snipe_message_author[message.channel.id] = message.author
+     snipe_message_content[message.channel.id] = message.content
+     await asyncio.sleep(60)
+     del snipe_message_author[message.channel.id]
+     del snipe_message_content[message.channel.id]
+ 
+@client.command()
+async def snipe(ctx):
+    channel = ctx.channel 
+    try:
+        snipeEmbed = discord.Embed(title=f"Last deleted message in #{channel.name}", description = snipe_message_content[channel.id])
+        snipeEmbed.set_footer(text=f"Deleted by {snipe_message_author[channel.id]}")
+        await ctx.send(embed = snipeEmbed)
+    except:
+        await ctx.send(f"There are no deleted messages in #{channel.name}")
+
+
 
 client.run(os.environ['DISCORD_BOT_TOKEN'])
