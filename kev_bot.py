@@ -612,7 +612,7 @@ async def snipe(ctx):
     channel = ctx.channel 
     try:
         snipeEmbed = discord.Embed(title=f"Last deleted message in #{channel.name}", description = snipe_message_content[channel.id])
-        snipeEmbed.set_footer(text=f"Deleted by {snipe_message_author[channel.id]}")
+        snipeEmbed.set_footer(text=f"Sent By {snipe_message_author[channel.id]}")
         await ctx.send(embed = snipeEmbed)
     except:
         await ctx.send(f"There are no deleted messages in #{channel.name}")
