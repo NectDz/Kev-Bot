@@ -556,22 +556,6 @@ async def howgay(ctx, user):
     em = discord.Embed(colour = discord.Colour.purple())
     em.add_field(name = f"Gay Meter",value = f'{user} is {random.choice(gayMeter)}% gay 🏳️‍🌈!')
     await ctx.send(embed =em)
-
-@client.command()
-@commands.cooldown(1, 10, commands.BucketType.user)
-async def sheesh(ctx, user: int):
-    if str(user) == "@everyone" or str(user) == ctx.author.mention:
-        await ctx.message.add_reaction('🤔')
-        return
-    
-    guild = client.get_guild(829751693640990780)
-
-    member = guild.get_member(user)
-
-    if member is None:
-        await ctx.send('Member is not in the server')
-    else:
-        await ctx.send('Member is in the server')
         
 @help.command()
 async def edp(ctx): 
