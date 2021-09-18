@@ -133,6 +133,7 @@ async def help3(ctx):
     em.add_field(name = "**jail**", value = "Puts the user you mentioned in Jail!")
     em.add_field(name = "**howgay**", value = "Tells you how gay the user you mentioned is 🏳️‍🌈")
     em.add_field(name = "**edp**", value = "Use this when someone goes edp mode!")
+    em.add_field(name = "**snipe**", value = "Snipes messages that have been deleted by someone.")
 
     em.set_thumbnail(url = 'https://i.imgur.com/mrwjkRC.png')
     em.set_footer(text=f'Page 3 out of 3')
@@ -416,7 +417,7 @@ async def beaner(ctx,user):
 @help.command()
 async def cracker(ctx):
     em = discord.Embed(colour = discord.Colour.blue(),title = "Cracker Command", description = "Calls the person you mentioned a Cracker")
-    em.add_field(name = "**Syntax**", value =f"{botPrefix} beaner @<member>")
+    em.add_field(name = "**Syntax**", value =f"{botPrefix} cracker @<member>")
     await ctx.send(embed =em)
 
 @client.command()
@@ -574,6 +575,11 @@ async def edp(ctx, user):
 
 # Snipe Command - If you see this you a gay ass nigga.
 
+@help.command()
+async def snipe(ctx):
+    em = discord.Embed(colour = discord.Colour.blue(),title = "Snipe Command", description = "Snipes messages that have been deleted by someone.")
+    em.add_field(name = "**Syntax**", value =f"{botPrefix} snipe")
+    await ctx.send(embed =em)
 snipe_message_author = {}
 snipe_message_content = {}
  
