@@ -7,9 +7,6 @@ from check import checkIfGif
 import time, random, os, asyncpraw, giphy_client
 from giphy_client.rest import ApiException
 import asyncio
-import googletrans
-from googletrans import Translator
-
 memeCounter = 0 
 allSubs = []
 
@@ -604,13 +601,6 @@ async def snipe(ctx):
     except:
         await ctx.send(f"There are no deleted messages in #{channel.name}")
 
-# Translate Command
-
-@client.command()
-async def translate(ctx, lang, *, args):
-    t = Translator()
-    a = t.translate(args, dest=lang)
-    await ctx.send(a.text)
 
 
 client.run(os.environ['DISCORD_BOT_TOKEN'])
