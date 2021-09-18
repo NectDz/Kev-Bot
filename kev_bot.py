@@ -1,4 +1,3 @@
-
 import discord
 from discord import embeds
 from discord.ext import commands
@@ -7,7 +6,6 @@ from check import checkIfGif
 import time, random, os, asyncpraw, giphy_client
 from giphy_client.rest import ApiException
 import asyncio
-memeCounter = 0 
 allSubs = []
 
 reddit = asyncpraw.Reddit(client_id = os.environ['clientID'],
@@ -598,3 +596,25 @@ async def snipe(ctx):
 
 
 client.run(os.environ['DISCORD_BOT_TOKEN'])
+
+# Quick Poll - Coded by Jeremy <333
+
+@client.command()
+async def poll(ctx, *, question=None):
+    if question == None:
+        await ctx.send("Please write a poll you fucking monkey!")
+ 
+    icon_url = ctx.author.avatar_url 
+ 
+    pollEmbed = discord.Embed(title = "New Poll!", description = f"{question}")
+ 
+    pollEmbed.set_footer(text = f"Poll given by {ctx.author}", icon_url = ctx.author.avatar_url)
+ 
+    pollEmbed.timestamp = ctx.message.created_at 
+ 
+    await ctx.message.delete()
+ 
+    poll_msg = await ctx.send(embed = pollEmbed)
+ 
+    await poll_msg.add_reaction("⬆️")
+    await poll_msg.add_reaction("⬇️")
