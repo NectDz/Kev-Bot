@@ -7,8 +7,6 @@ from check import checkIfGif
 import time, random, os, asyncpraw, giphy_client
 from giphy_client.rest import ApiException
 import asyncio
-import googletrans
-from googletrans import Translator
 
 memeCounter = 0 
 allSubs = []
@@ -620,13 +618,15 @@ async def snipe(ctx):
     except:
         await ctx.send(f"There are no deleted messages in #{channel.name}")
 
-# Translate Command
+# Welcome Message
 
-@client.command()
-async def translate(ctx, lang, *, args):
-    t = Translator()
-    a = t.translate(args, dest=lang)
-    await ctx.send(a.text)
-
+@client.event
+async def on_member_join(member):
+    embed = discord.Embed(
+        color = (discord.Color.black()),
+        title = 'Welcome Message' ,
+        description = f'Welcome {member.mention}, enjoy your stay! ' 
+    )
+    await member.send(embed=embed)
 
 client.run(os.environ['DISCORD_BOT_TOKEN'])
