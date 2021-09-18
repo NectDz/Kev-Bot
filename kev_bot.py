@@ -600,10 +600,6 @@ async def snipe(ctx):
     except:
         await ctx.send(f"There are no deleted messages in #{channel.name}")
 
-
-
-client.run(os.environ['DISCORD_BOT_TOKEN'])
-
 # Quick Poll - Coded by Jeremy <333
 
 @client.command()
@@ -625,3 +621,5 @@ async def poll(ctx, *, question=None):
  
     await poll_msg.add_reaction("⬆️")
     await poll_msg.add_reaction("⬇️")
+
+client.run(os.environ['DISCORD_BOT_TOKEN'])
