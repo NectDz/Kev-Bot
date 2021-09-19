@@ -632,7 +632,7 @@ async def poll(ctx, *, question=None):
 # Member Join Command
 
 @client.event
-async def on_member_join(member):
+async def on_member_join(member: discord.Member):
     embed = discord.Embed(
         color = (discord.Color.magenta()),
         title = 'Welcome Message!',
