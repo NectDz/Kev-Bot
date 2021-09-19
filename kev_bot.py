@@ -629,4 +629,18 @@ async def poll(ctx, *, question=None):
     await poll_msg.add_reaction("⬆️")
     await poll_msg.add_reaction("⬇️")
 
+# Member Join Command
+
+@client.event
+async def on_member_join(member):
+    embed = discord.Embed(
+        color = (discord.Color.magenta()),
+        title = 'Welcome Message!',
+        description = f'Welcome {member.mention}, enjoy your stay!'
+    )
+    await member.send(embed=embed)
+
+
+
+
 client.run(os.environ['DISCORD_BOT_TOKEN'])
