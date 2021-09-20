@@ -632,13 +632,12 @@ async def poll(ctx, *, question=None):
 # Member Join Command
 
 @client.event
-async def on_member_join(member: discord.Member):
-    embed = discord.Embed(
-        color = (discord.Color.magenta()),
-        title = 'Welcome Message!',
-        description = f'Welcome {member.mention}, enjoy your stay!'
-    )
-    await member.send(embed=embed)
+async def on_member_join(member):
+    guild = client.get_guild(829751693640990780)
+    channel = guild.get_channel(829751693640990783)
+    await channel.send(f'Welcome to the server {member.mention} ! 🥳 ') 
+    await member.send(f'Welcome to the {guild.name} server, {member.name}! 🥳')
+    
 
 
 
