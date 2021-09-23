@@ -677,8 +677,8 @@ async def av(ctx, *,  avamember : discord.Member=None):
 # Text To Speech
 
 @client.command()
-async def test(ctx):
-    await ctx.send("This is a tts message", tts=True)
+async def test(ctx, *, text):
+    await ctx.send(f'{text}', tts=True)
 
 
 
