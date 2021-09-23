@@ -208,4 +208,11 @@ EDPGifs = ['https://c.tenor.com/XZXAZgaDexsAAAAC/edp445-eagles.gif',
            'https://c.tenor.com/AlywRKRInesAAAAd/edp.gif']
 
 AsianGifs = ['https://media4.giphy.com/media/16Sg1XyCyjfkA/giphy.gif',
-             'https://media1.giphy.com/media/dKZRRvQhrT2HS/giphy.gif']
+             'https://media1.giphy.com/media/dKZRRvQhrT2HS/giphy.gif',
+             'https://media4.giphy.com/media/HiGPJdGNFfFyE/giphy.gif',
+             'https://media4.giphy.com/media/KiQTBiI77Dpy8/giphy.gif',
+             'https://media1.giphy.com/media/7wDEaTbCupuRq/giphy.gif',
+             'https://media1.giphy.com/media/PxsTynUW6OVNK/giphy.gif',
+             'https://media1.giphy.com/media/l1JojwaIegn6fbgd2/giphy.gif',
+             'https://media0.giphy.com/media/26FfgvCYJi6DPaZY4/giphy.gif',
+             'https://media4.giphy.com/media/aT8xFndP3Kpeo/giphy.gif']
