@@ -215,4 +215,6 @@ AsianGifs = ['https://media4.giphy.com/media/16Sg1XyCyjfkA/giphy.gif',
              'https://media1.giphy.com/media/PxsTynUW6OVNK/giphy.gif',
              'https://media1.giphy.com/media/l1JojwaIegn6fbgd2/giphy.gif',
              'https://media0.giphy.com/media/26FfgvCYJi6DPaZY4/giphy.gif',
-             'https://media4.giphy.com/media/aT8xFndP3Kpeo/giphy.gif']
+             'https://media4.giphy.com/media/aT8xFndP3Kpeo/giphy.gif',
+             'https://media2.giphy.com/media/UQsIt85ldUSskS3i1b/giphy.gif',
+             'https://media4.giphy.com/media/LktZs35kNS6KA/giphy.gif']
