@@ -205,7 +205,13 @@ EDPGifs = ['https://c.tenor.com/XZXAZgaDexsAAAAC/edp445-eagles.gif',
            'https://c.tenor.com/GqDuEgxhgqAAAAAC/edp-fistbump.gif',
            'https://c.tenor.com/K9QmMWWdk88AAAAC/edp-edp-burner.gif',
            'https://c.tenor.com/T2lMzW9WdicAAAAC/amogli-edp445.gif',
-           'https://c.tenor.com/AlywRKRInesAAAAd/edp.gif']
+           'https://c.tenor.com/AlywRKRInesAAAAd/edp.gif',
+           'https://c.tenor.com/AlywRKRInesAAAAd/edp.gif',
+           'https://c.tenor.com/T2lMzW9WdicAAAAC/amogli-edp445.gif',
+           'https://c.tenor.com/G64z9Z9KeDgAAAAd/edp-thrust.gif',
+           'https://c.tenor.com/voDvl27FqrEAAAAd/edp445-edp.gif',
+           'https://c.tenor.com/BW2Edm10KhQAAAAM/edp.gif',
+           'https://pbs.twimg.com/media/BdhZ6T0IgAAivTy.jpg']
 
 AsianGifs = ['https://media4.giphy.com/media/16Sg1XyCyjfkA/giphy.gif',
              'https://media1.giphy.com/media/dKZRRvQhrT2HS/giphy.gif',
