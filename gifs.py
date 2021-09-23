@@ -206,3 +206,6 @@ EDPGifs = ['https://c.tenor.com/XZXAZgaDexsAAAAC/edp445-eagles.gif',
            'https://c.tenor.com/K9QmMWWdk88AAAAC/edp-edp-burner.gif',
            'https://c.tenor.com/T2lMzW9WdicAAAAC/amogli-edp445.gif',
            'https://c.tenor.com/AlywRKRInesAAAAd/edp.gif']
+
+AsianGifs = ['https://media4.giphy.com/media/16Sg1XyCyjfkA/giphy.gif',
+             'https://media1.giphy.com/media/dKZRRvQhrT2HS/giphy.gif']

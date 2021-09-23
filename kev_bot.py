@@ -2,7 +2,7 @@
 import discord
 from discord import embeds
 from discord.ext import commands
-from gifs import cuddleGifs,hugGifs,slapGifs,sexyGifs,kissGifs,beanerGifs,crackerGifs, gmGifs, gnGifs, killGifs, cryGifs, fuckYouGifs, shutUpGifs, EDPGifs
+from gifs import cuddleGifs,hugGifs,slapGifs,sexyGifs,kissGifs,beanerGifs,crackerGifs, gmGifs, gnGifs, killGifs, cryGifs, fuckYouGifs, shutUpGifs, EDPGifs, AsianGifs
 from check import checkIfGif
 import time, random, os, asyncpraw, giphy_client
 from giphy_client.rest import ApiException
@@ -431,6 +431,25 @@ async def cracker(ctx,user):
     em = discord.Embed(colour = discord.Colour.red())
     em.add_field(name = f"Cracker Command",value = f'**{ctx.author.mention} called {user} a cracker!**')
     em.set_image(url = cracker)
+    await ctx.send(embed =em)
+
+@help.command()
+async def chink(ctx):
+    em = discord.Embed(colour = discord.Colour.blue(),title = "Chink Command", description = "Calls the person you mentioned a Chink")
+    em.add_field(name = "**Syntax**", value =f"{botPrefix} chink @<member>")
+    await ctx.send(embed =em)
+
+@client.command()
+@commands.cooldown(1, 10, commands.BucketType.user)
+async def chink(ctx,user):
+    if str(user) == "@everyone" or str(user) == ctx.author.mention:
+        await ctx.message.add_reaction('🤔')
+        return
+
+    asian  = random.choice(AsianGifs)
+    em = discord.Embed(colour = discord.Colour.red())
+    em.add_field(name = f"Asian Command",value = f'**{ctx.author.mention} called {user} a chink!**')
+    em.set_image(url = asian)
     await ctx.send(embed =em)
 
 # Kill Command
