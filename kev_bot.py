@@ -134,6 +134,8 @@ async def help3(ctx):
     em.add_field(name = "**edp**", value = "Use this when someone goes edp mode!")
     em.add_field(name = "**snipe**", value = "Snipes messages that have been deleted by someone.")
     em.add_field(name = "**poll**", value = "Makes a poll to let you know what others think!")
+    em.add_field(name = "**av**", value = "Shows someones avatar.")
+
 
     em.set_thumbnail(url = 'https://i.imgur.com/mrwjkRC.png')
     em.set_footer(text=f'Page 3 out of 3')
@@ -660,10 +662,23 @@ async def on_member_join(member):
 
 # Avatar command
 
+@help.command()
+async def av(ctx):
+    em = discord.Embed(colour = discord.Colour.blue(),title = "Avatar Command", description = "Shows someones avatar.")
+    em.add_field(name = "**Syntax**", value =f"{botPrefix} av")
+    await ctx.send(embed =em)
+
 @client.command()
-async def avatar(ctx, *,  avamember : discord.Member=None):
+async def av(ctx, *,  avamember : discord.Member=None):
     userAvatarUrl = avamember.avatar_url
     await ctx.send(userAvatarUrl)
+
+
+# Text To Speech
+
+@client.command()
+async def test(ctx):
+    await ctx.send("This is a tts message", tts=True)
 
 
 
