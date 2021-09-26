@@ -649,10 +649,7 @@ async def av(ctx):
     em.add_field(name = "**Syntax**", value =f"{botPrefix} av")
     await ctx.send(embed =em)
 
-@client.command()
-async def av(ctx, *,  avamember : discord.Member=None):
-    userAvatarUrl = avamember.avatar_url
-    await ctx.send(userAvatarUrl)
+
 
 
 # Text To Speech
@@ -661,6 +658,32 @@ async def av(ctx, *,  avamember : discord.Member=None):
 async def test(ctx):
     await ctx.send("This is a tts message", tts=True)
 
+# Server Info Command
+
+@client.command()
+async def serverinfo(ctx):
+  name = str(ctx.guild.name)
+  description = str(ctx.guild.description)
+
+  owner = str(ctx.guild.owner)
+  id = str(ctx.guild.id)
+  region = str(ctx.guild.region)
+  memberCount = str(ctx.guild.member_count)
+
+  icon = str(ctx.guild.icon_url)
+   
+  embed = discord.Embed(
+      title=name + " Server Information",
+      description=description,
+      color=discord.Color.blue()
+    )
+  embed.set_thumbnail(url=icon)
+  embed.add_field(name="Owner", value=owner, inline=True)
+  embed.add_field(name="Server ID", value=id, inline=True)
+  embed.add_field(name="Region", value=region, inline=True)
+  embed.add_field(name="Member Count", value=memberCount, inline=True)
+
+  await ctx.send(embed=embed)
 
 
 client.run(os.environ['DISCORD_BOT_TOKEN'])
