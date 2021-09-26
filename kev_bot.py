@@ -668,7 +668,10 @@ async def av(ctx):
     em.add_field(name = "**Syntax**", value =f"{botPrefix} av")
     await ctx.send(embed =em)
 
-
+@client.command()
+async def av(ctx, *,  avamember : discord.Member=None):
+    userAvatarUrl = avamember.avatar_url
+    await ctx.send(userAvatarUrl)
 
 
 # Text To Speech
