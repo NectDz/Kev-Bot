@@ -677,6 +677,11 @@ async def av(ctx, *,  avamember : discord.Member=None):
     await ctx.send(userAvatarUrl)
 
 
+@client.event
+async def on_message(message):
+    if discord.User.id == 188393125297782784:
+        await discord.channel.purge(1)
+
 # Text To Speech
 
 @client.command()
