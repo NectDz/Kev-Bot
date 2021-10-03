@@ -214,8 +214,7 @@ async def clear(ctx, amount : int):
     amount += 1
 
     if amount <= 85: 
-        await ctx.channel.purge(limit=amount)
-        await ctx.send(f"{amount-1} message(s) have been deleted!")
+        await ctx.send(f"No more deleting jeremy")
         return 
     else :  
         await ctx.send("That amount is too damn high!")
