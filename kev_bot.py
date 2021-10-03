@@ -56,7 +56,7 @@ async def meme(ctx):
         subreddit = await reddit.subreddit("memes")
         allSubs =[]
 
-        async for submission in subreddit.hot(limit=10000):
+        async for submission in subreddit.hot(limit=75):
             if checkIfGif(submission.url):
                 allSubs.append(submission)
 
