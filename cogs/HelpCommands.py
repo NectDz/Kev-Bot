@@ -9,8 +9,8 @@ class helpCommands(commands.Cog):
     def __init__(self,bot):
         self.bot = bot
 
-    @commands.group(self,invoke_without_command = True)
-    async def help(ctx):
+    @commands.group(invoke_without_command = True)
+    async def help(self, ctx):
         
         em = discord.Embed(colour = discord.Colour.gold(),title = "Help", description = "Use **!kg <command>** to use a command\nDo **!kg help <command>** to see how to use the command")
         em.add_field(name = "**kiss**", value = "Kisses the user you mentioned :kissing_heart:")
@@ -39,7 +39,7 @@ class helpCommands(commands.Cog):
         await ctx.send(embed = em)
 
     @help.command(aliases=['3'])
-    async def help3(self, ctx):    
+    async def help3(self,ctx):    
         em = discord.Embed(colour = discord.Colour.gold(),title = "Help 3", description = "Use **!kg <command>** to use a command\nDo **!kg help <command>** to see how to use the command")
         em.add_field(name = "**jail**", value = "Puts the user you mentioned in Jail!")
         em.add_field(name = "**howgay**", value = "Tells you how gay the user you mentioned is 🏳️‍🌈")
