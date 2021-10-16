@@ -1,11 +1,8 @@
 import discord
 from discord import embeds
 from discord.ext import commands
-from gifs import cuddleGifs,hugGifs,slapGifs,sexyGifs,kissGifs,beanerGifs,crackerGifs, gmGifs, gnGifs, killGifs, cryGifs, fuckYouGifs, shutUpGifs, EDPGifs, AsianGifs
 from check import checkIfGif
-import time, random, os, asyncpraw, giphy_client
-from giphy_client.rest import ApiException
-import asyncio
+import random, os, asyncpraw
 
 # Reddit 
 
