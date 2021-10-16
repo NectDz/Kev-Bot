@@ -28,7 +28,7 @@ class redditCommands(commands.Cog):
         self.bot = bot
 
     @commands.command()
-    async def meme(ctx):
+    async def meme(self, ctx):
         global allSubs, memeCounter, reddit
         if len(allSubs) == 0:
             memeCounter = 0
@@ -53,7 +53,7 @@ class redditCommands(commands.Cog):
 
     # Gaming 
     @commands.command()
-    async def gaming(ctx):
+    async def gaming(self, ctx):
         global gamingList, gamingCounter
         if len(gamingList) == 0 or gamingCounter >= 75:
             gamingCounter = 0 
