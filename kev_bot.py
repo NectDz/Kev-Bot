@@ -46,58 +46,6 @@ async def on_command_error(ctx, error):
         title = "Slow down there partner...", description = 'The command **{}** is still on cooldown for {:.2f}'.format(ctx.command.name, error.retry_after))
         await ctx.send(embed = em)
 
-# Meme 
-
-@client.command()
-async def meme(ctx):
-    global allSubs, memeCounter
-    if len(allSubs) == 0:
-        memeCounter = 0
-        subreddit = await reddit.subreddit("memes")
-        allSubs =[]
-
-        async for submission in subreddit.hot(limit=75):
-            if checkIfGif(submission.url):
-                allSubs.append(submission)
-
-    memeCounter += 1
-
-    random_sub = random.choice(allSubs)
-
-    name = random_sub.title
-    url = random_sub.url
-    em = discord.Embed(color = discord.Colour.blue(),title = ":100: KevBot Meme :100:", description = name)
-    em.set_image(url = url)
-
-    await ctx.send(embed = em)
-    allSubs.pop(random_sub)
-
-# Gaming
-gamingList = []
-gamingCounter = 0  
-@client.command()
-async def gaming(ctx):
-    global gamingList, gamingCounter
-    if len(gamingList) == 0 or gamingCounter >= 75:
-        gamingCounter = 0 
-        subreddit = await reddit.subreddit("gaming")
-        gamingList = []
-        async for submission in subreddit.hot(limit=75):
-            if checkIfGif(submission.url) == True:
-                gamingList.append(submission)    
-    
-    gamingCounter += 1
-
-    random_sub = random.choice(gamingList)
-
-    name = random_sub.title
-    url = random_sub.url
-
-    em = discord.Embed(color = discord.Colour.blue(),title = ":100: KevBot Gaming :100:", description = name)
-    em.set_image(url = url)
-
-    await ctx.send(embed = em)
-
 # Help Command
 
 @client.group(invoke_without_command = True)
@@ -709,5 +657,5 @@ async def serverinfo(ctx):
 
   await ctx.send(embed=embed)
 
-
+client.load_extension('cogs.reddit')
 client.run(os.environ['DISCORD_BOT_TOKEN'])
