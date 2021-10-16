@@ -46,29 +46,7 @@ async def on_command_error(ctx, error):
         title = "Slow down there partner...", description = 'The command **{}** is still on cooldown for {:.2f}'.format(ctx.command.name, error.retry_after))
         await ctx.send(embed = em)
 
-# Help Command
-
 # Mod Commands 
-
-@help.command()
-async def mod(ctx):
-    em = discord.Embed(colour = discord.Colour.purple(),title = "Mod Commands", description = "Commands **ONLY** Mods can use")
-
-    em.add_field(name = "**clear**", value =f"Deletes the amount of message(s) specified")
-    em.add_field(name = "**kick**", value =f"Kicks the user you mentioned and gives a reason")
-    em.add_field(name = "**ban**", value =f"Bans the user you mentioned and gives a reason")
-    em.add_field(name = "**mute**", value =f"Mutes the user you mentioned and gives a reason")
-    em.add_field(name = "**unmute**", value =f"Unmutes the user you mentioned")
-
-    em.set_thumbnail(url = 'https://i.imgur.com/mrwjkRC.png')
-    em.set_footer(text=f"KGBot Created by NectDzN aka 'KingKev'")
-    await ctx.send(embed =em)
-
-@help.command()
-async def kick(ctx):
-    em = discord.Embed(colour = discord.Colour.blue(),title = "Kick Command", description = "Kicks a member from the server")
-    em.add_field(name = "**Syntax**", value =f"{botPrefix} kick <member> [reason]")
-    await ctx.send(embed =em)
 
 @client.command()
 @commands.has_permissions(kick_members=True)
@@ -81,14 +59,6 @@ async def kick(ctx, user: discord.Member,*, reason):
     await user.kick(reason =reason)
 
 # Ban 
-
-@help.command()
-async def ban(ctx):
-    em = discord.Embed(colour = discord.Colour.blue(),title = "Ban Command", description = "Ban a member from the server")
-
-    em.add_field(name = "**Syntax**", value =f"{botPrefix} ban <member> [reason]")
-
-    await ctx.send(embed =em)
 
 @client.command()
 @commands.has_permissions(ban_members=True)
@@ -104,14 +74,6 @@ async def ban(ctx, user: discord.Member,*, reason):
 
 # Clear Command
 
-@help.command()
-async def clear(ctx):
-    em = discord.Embed(colour = discord.Colour.blue(),title = "Clear Command", description = "Clears messages from the server")
-
-    em.add_field(name = "**Syntax**", value =f"{botPrefix} clear <amount>")
-
-    await ctx.send(embed =em)
-
 @client.command()
 @commands.has_permissions(kick_members=True)
 async def clear(ctx, amount : int):
@@ -126,14 +88,6 @@ async def clear(ctx, amount : int):
 
 # Mute 
 
-@help.command()
-async def mute(ctx):
-    em = discord.Embed(colour = discord.Colour.blue(),title = "Mute Command", description = "Mutes user")
-
-    em.add_field(name = "**Syntax**", value =f"{botPrefix} mute @<user>")
-
-    await ctx.send(embed =em)
-
 @client.command()
 @commands.has_permissions(kick_members=True)
 async def mute(ctx, member : discord.Member):
@@ -144,14 +98,6 @@ async def mute(ctx, member : discord.Member):
     await ctx.send(member.mention + " has been muted")
 
 # Unmute
-
-@help.command()
-async def unmute(ctx):
-    em = discord.Embed(colour = discord.Colour.blue(),title = "UnMute Command", description = "UnMutes user")
-
-    em.add_field(name = "**Syntax**", value =f"{botPrefix} unmute @<user>")
-
-    await ctx.send(embed =em)
 
 @client.command()
 @commands.has_permissions(kick_members=True)
@@ -246,12 +192,6 @@ async def sexy(ctx):
 
 # Hug Command
 
-@help.command()
-async def hug(ctx):
-    em = discord.Embed(colour = discord.Colour.blue(),title = "Hug Command", description = "Hugs a user you mention ")
-    em.add_field(name = "**Syntax**", value =f"{botPrefix} hug @<member>")
-    await ctx.send(embed =em)
-
 @client.command()
 @commands.cooldown(1, 10, commands.BucketType.user)
 async def hug(ctx,user):
@@ -282,11 +222,6 @@ async def cuddle(ctx,user):
 
 # Kiss Command
 
-@help.command()
-async def kiss(ctx):
-    em = discord.Embed(colour = discord.Colour.gold(),title = "Kiss Command", description = f"{botPrefix} kiss @<member>")
-    await ctx.send(embed =em)
-
 @client.command()
 @commands.cooldown(1, 10, commands.BucketType.user)
 async def kiss(ctx,user):
@@ -303,10 +238,6 @@ async def kiss(ctx,user):
 
 # Beaner Command 
 
-@help.command()
-async def beaner(ctx):
-    em = discord.Embed(colour = discord.Colour.gold(),title = "Beaner Command", description = f"{botPrefix} beaner @<member>")
-    await ctx.send(embed =em)
 
 @client.command()
 @commands.cooldown(1, 10, commands.BucketType.user)
@@ -323,12 +254,6 @@ async def beaner(ctx,user):
 
 # Cracker Command 
 
-@help.command()
-async def cracker(ctx):
-    em = discord.Embed(colour = discord.Colour.blue(),title = "Cracker Command", description = "Calls the person you mentioned a Cracker")
-    em.add_field(name = "**Syntax**", value =f"{botPrefix} cracker @<member>")
-    await ctx.send(embed =em)
-
 @client.command()
 @commands.cooldown(1, 10, commands.BucketType.user)
 async def cracker(ctx,user):
@@ -340,12 +265,6 @@ async def cracker(ctx,user):
     em = discord.Embed(colour = discord.Colour.red())
     em.add_field(name = f"Cracker Command",value = f'**{ctx.author.mention} called {user} a cracker!**')
     em.set_image(url = cracker)
-    await ctx.send(embed =em)
-
-@help.command()
-async def chink(ctx):
-    em = discord.Embed(colour = discord.Colour.blue(),title = "Chink Command", description = "Calls the person you mentioned a Chink")
-    em.add_field(name = "**Syntax**", value =f"{botPrefix} chink @<member>")
     await ctx.send(embed =em)
 
 @client.command()
@@ -363,12 +282,6 @@ async def chink(ctx,user):
 
 # Kill Command
 
-@help.command()
-async def kill(ctx):
-    em = discord.Embed(colour = discord.Colour.blue(),title = "Kill Command", description = "Kills the person you mentioned :eyes:")
-    em.add_field(name = "**Syntax**", value =f"{botPrefix} kill @<member>")
-    await ctx.send(embed =em)
-
 @client.command()
 @commands.cooldown(1, 10, commands.BucketType.user)
 async def kill(ctx,user):
@@ -384,12 +297,6 @@ async def kill(ctx,user):
 
 # Cry Command
 
-@help.command()
-async def cry(ctx):
-    em = discord.Embed(colour = discord.Colour.blue(),title = "Cry Command", description = "Shows a crying gif ")
-    em.add_field(name = "**Syntax**", value =f"{botPrefix} cry")
-    await ctx.send(embed =em)
-
 @client.command()
 @commands.cooldown(1, 10, commands.BucketType.user)
 async def cry(ctx):
@@ -400,12 +307,6 @@ async def cry(ctx):
     await ctx.send(embed =em)
 
 # Fuck You 
-
-@help.command()
-async def fu(ctx): 
-    em = discord.Embed(colour = discord.Colour.blue(),title = "Cry Command", description = "Shows a crying gif ")
-    em.add_field(name = "**Syntax**", value =f"{botPrefix} fu @<member>")
-    await ctx.send(embed =em)
 
 @client.command()
 @commands.cooldown(1, 10, commands.BucketType.user)
@@ -421,12 +322,6 @@ async def fu(ctx, user):
     await ctx.send(embed =em)
 
 # NSFW 
-
-@help.command()
-async def nsfw(ctx): 
-    em = discord.Embed(colour = discord.Colour.blue(),title = "NSFW Command", description = "Shows a NSFW photo")
-    em.add_field(name = "**Syntax**", value =f"{botPrefix} NSFW")
-    await ctx.send(embed =em)
 
 nsfwCounter = 0 
 apiKey = os.environ['giphyKEY']
@@ -455,12 +350,6 @@ async def nsfw(ctx):
 
 # Shut up
 
-@help.command()
-async def shutup(ctx): 
-    em = discord.Embed(colour = discord.Colour.blue(),title = "Cry Command", description = "Shows a crying gif ")
-    em.add_field(name = "**Syntax**", value =f"{botPrefix} shutup @<member>")
-    await ctx.send(embed =em)
-
 @client.command()
 @commands.cooldown(1, 10, commands.BucketType.user)
 async def shutup(ctx, user):
@@ -485,12 +374,6 @@ async def howgay(ctx, user):
     em = discord.Embed(colour = discord.Colour.purple())
     em.add_field(name = f"Gay Meter",value = f'{user} is {random.choice(gayMeter)}% gay 🏳️‍🌈!')
     await ctx.send(embed =em)
-        
-@help.command()
-async def edp(ctx): 
-    em = discord.Embed(colour = discord.Colour.blue(),title = "EDP Command", description = "When someone goes EDP Mode use this! ")
-    em.add_field(name = "**Syntax**", value =f"{botPrefix} edp @<user>")
-    await ctx.send(embed =em)
 
 @client.command()
 @commands.cooldown(1, 5, commands.BucketType.user)
@@ -503,11 +386,6 @@ async def edp(ctx, user):
 
 # Snipe Command - If you see this you a gay ass nigga.
 
-@help.command()
-async def snipe(ctx):
-    em = discord.Embed(colour = discord.Colour.blue(),title = "Snipe Command", description = "Snipes messages that have been deleted by someone.")
-    em.add_field(name = "**Syntax**", value =f"{botPrefix} snipe")
-    await ctx.send(embed =em)
 snipe_message_author = {}
 snipe_message_content = {}
  
@@ -530,12 +408,6 @@ async def snipe(ctx):
         await ctx.send(f"There are no deleted messages in #{channel.name}")
 
 # Quick Poll - Coded by Jeremy <333
-
-@help.command()
-async def poll(ctx):
-    em = discord.Embed(colour = discord.Colour.blue(),title = "Poll Command", description = "Makes a poll")
-    em.add_field(name = "**Syntax**", value =f"{botPrefix} poll")
-    await ctx.send(embed =em)
 
 @client.command()
 async def poll(ctx, *, question=None):
@@ -568,12 +440,6 @@ async def on_member_join(member):
     
 
 # Avatar command
-
-@help.command()
-async def av(ctx):
-    em = discord.Embed(colour = discord.Colour.blue(),title = "Avatar Command", description = "Shows someones avatar.")
-    em.add_field(name = "**Syntax**", value =f"{botPrefix} av")
-    await ctx.send(embed =em)
 
 @client.command()
 async def av(ctx, *,  avamember : discord.Member=None):
