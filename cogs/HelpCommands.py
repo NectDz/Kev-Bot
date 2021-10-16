@@ -4,6 +4,8 @@ from discord.ext import commands
 from check import checkIfGif
 import random, os, asyncpraw
 
+botPrefix = "!kg "
+
 class helpCommands(commands.Cog):
 
     def __init__(self,bot):
@@ -53,6 +55,133 @@ class helpCommands(commands.Cog):
         em.set_footer(text=f'Page 3 out of 3')
         await ctx.send(embed = em)
 
+    @help.command()
+    async def mod(self, ctx):
+        em = discord.Embed(colour = discord.Colour.purple(),title = "Mod Commands", description = "Commands **ONLY** Mods can use")
+
+        em.add_field(name = "**clear**", value =f"Deletes the amount of message(s) specified")
+        em.add_field(name = "**kick**", value =f"Kicks the user you mentioned and gives a reason")
+        em.add_field(name = "**ban**", value =f"Bans the user you mentioned and gives a reason")
+        em.add_field(name = "**mute**", value =f"Mutes the user you mentioned and gives a reason")
+        em.add_field(name = "**unmute**", value =f"Unmutes the user you mentioned")
+
+        em.set_thumbnail(url = 'https://i.imgur.com/mrwjkRC.png')
+        em.set_footer(text=f"KGBot Created by NectDzN aka 'KingKev'")
+        await ctx.send(embed =em)
+
+    @help.command()
+    async def kick(self, ctx):
+        em = discord.Embed(colour = discord.Colour.blue(),title = "Kick Command", description = "Kicks a member from the server")
+        em.add_field(name = "**Syntax**", value =f"{botPrefix} kick <member> [reason]")
+        await ctx.send(embed =em)
+
+    @help.command()
+    async def ban(self, ctx):
+        em = discord.Embed(colour = discord.Colour.blue(),title = "Ban Command", description = "Ban a member from the server")
+
+        em.add_field(name = "**Syntax**", value =f"{botPrefix} ban <member> [reason]")
+
+        await ctx.send(embed =em)
+
+    @help.command()
+    async def clear(self,ctx):
+        em = discord.Embed(colour = discord.Colour.blue(),title = "Clear Command", description = "Clears messages from the server")
+
+        em.add_field(name = "**Syntax**", value =f"{botPrefix} clear <amount>")
+
+        await ctx.send(embed =em)
+
+    @help.command()
+    async def mute(self,ctx):
+        em = discord.Embed(colour = discord.Colour.blue(),title = "Mute Command", description = "Mutes user")
+
+        em.add_field(name = "**Syntax**", value =f"{botPrefix} mute @<user>")
+
+        await ctx.send(embed =em)
+
+    @help.command()
+    async def unmute(self,ctx):
+        em = discord.Embed(colour = discord.Colour.blue(),title = "UnMute Command", description = "UnMutes user")
+
+        em.add_field(name = "**Syntax**", value =f"{botPrefix} unmute @<user>")
+
+        await ctx.send(embed =em)
+
+    @help.command()
+    async def hug(self,ctx):
+        em = discord.Embed(colour = discord.Colour.blue(),title = "Hug Command", description = "Hugs a user you mention ")
+        em.add_field(name = "**Syntax**", value =f"{botPrefix} hug @<member>")
+        await ctx.send(embed =em)
+
+    @help.command()
+    async def kiss(self,ctx):
+        em = discord.Embed(colour = discord.Colour.gold(),title = "Kiss Command", description = f"{botPrefix} kiss @<member>")
+        await ctx.send(embed =em)
+
+    @help.command()
+    async def beaner(self,ctx):
+        em = discord.Embed(colour = discord.Colour.gold(),title = "Beaner Command", description = f"{botPrefix} beaner @<member>")
+        await ctx.send(embed =em)
+
+    @help.command()
+    async def cracker(self,ctx):
+        em = discord.Embed(colour = discord.Colour.blue(),title = "Cracker Command", description = "Calls the person you mentioned a Cracker")
+        em.add_field(name = "**Syntax**", value =f"{botPrefix} cracker @<member>")
+        await ctx.send(embed =em)
+
+    @help.command()
+    async def kill(self,ctx):
+        em = discord.Embed(colour = discord.Colour.blue(),title = "Kill Command", description = "Kills the person you mentioned :eyes:")
+        em.add_field(name = "**Syntax**", value =f"{botPrefix} kill @<member>")
+        await ctx.send(embed =em)
+
+    @help.command()
+    async def cry(self,ctx):
+        em = discord.Embed(colour = discord.Colour.blue(),title = "Cry Command", description = "Shows a crying gif ")
+        em.add_field(name = "**Syntax**", value =f"{botPrefix} cry")
+        await ctx.send(embed =em)
+
+    @help.command()
+    async def fu(self,ctx): 
+        em = discord.Embed(colour = discord.Colour.blue(),title = "Cry Command", description = "Shows a crying gif ")
+        em.add_field(name = "**Syntax**", value =f"{botPrefix} fu @<member>")
+        await ctx.send(embed =em)
+
+    @help.command()
+    async def nsfw(self,ctx): 
+        em = discord.Embed(colour = discord.Colour.blue(),title = "NSFW Command", description = "Shows a NSFW photo")
+        em.add_field(name = "**Syntax**", value =f"{botPrefix} NSFW")
+        await ctx.send(embed =em)
+
+    @help.command()
+    async def shutup(self,ctx): 
+        em = discord.Embed(colour = discord.Colour.blue(),title = "Cry Command", description = "Shows a crying gif ")
+        em.add_field(name = "**Syntax**", value =f"{botPrefix} shutup @<member>")
+        await ctx.send(embed =em)
+    
+    @help.command()
+    async def edp(self,ctx): 
+        em = discord.Embed(colour = discord.Colour.blue(),title = "EDP Command", description = "When someone goes EDP Mode use this! ")
+        em.add_field(name = "**Syntax**", value =f"{botPrefix} edp @<user>")
+        await ctx.send(embed =em)
+
+    @help.command()
+    async def snipe(self,ctx):
+        em = discord.Embed(colour = discord.Colour.blue(),title = "Snipe Command", description = "Snipes messages that have been deleted by someone.")
+        em.add_field(name = "**Syntax**", value =f"{botPrefix} snipe")
+        await ctx.send(embed =em)
+    
+    @help.command()
+    async def poll(self,ctx):
+        em = discord.Embed(colour = discord.Colour.blue(),title = "Poll Command", description = "Makes a poll")
+        em.add_field(name = "**Syntax**", value =f"{botPrefix} poll")
+        await ctx.send(embed =em)
+
+    @help.command()
+    async def av(self,ctx):
+        em = discord.Embed(colour = discord.Colour.blue(),title = "Avatar Command", description = "Shows someones avatar.")
+        em.add_field(name = "**Syntax**", value =f"{botPrefix} av")
+        await ctx.send(embed =em)
 
 def setup(bot):
     bot.add_cog(helpCommands(bot))
