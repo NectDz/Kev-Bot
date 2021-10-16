@@ -52,3 +52,7 @@ class helpCommands(commands.Cog):
         em.set_thumbnail(url = 'https://i.imgur.com/mrwjkRC.png')
         em.set_footer(text=f'Page 3 out of 3')
         await ctx.send(embed = em)
+
+
+def setup(bot):
+    bot.add_cog(helpCommands(bot))
