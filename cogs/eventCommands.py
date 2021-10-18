@@ -33,6 +33,9 @@ class eventCommands(commands.Cog):
 
         if message.content in hellos: 
             await message.channel.send(f"Howdy there!")
+        
+        if message.content == "the younger the better": 
+            await message.channel.send(f"Exactly!")
 
     # CoolDowns
 
