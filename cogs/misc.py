@@ -242,19 +242,22 @@ class miscCommands(commands.Cog):
     async def nsfw(self,ctx):
         global api_response, lst, nsfwCounter
 
-        if nsfwCounter >= 75: 
-            api_response = api_instance.gifs_search_get(apiKey, 'hot girls', limit=50, rating = 'r')
-            lst = list(api_response.data)
-            nsfwCounter = 0 
+        if ctx.channel.nsfw == True: 
+            if nsfwCounter >= 75: 
+                api_response = api_instance.gifs_search_get(apiKey, 'hot girls', limit=50, rating = 'r')
+                lst = list(api_response.data)
+                nsfwCounter = 0 
 
-        nsfwCounter += 1
-        
-        gif = random.choice(lst)
+            nsfwCounter += 1
+            
+            gif = random.choice(lst)
 
-        em = discord.Embed(color = discord.Colour.blue(),title = "KevBot NSFW")
-        em.set_image(url = f'https://media.giphy.com/media/{gif.id}/giphy.gif')
+            em = discord.Embed(color = discord.Colour.blue(),title = "KevBot NSFW")
+            em.set_image(url = f'https://media.giphy.com/media/{gif.id}/giphy.gif')
 
-        await ctx.send(embed = em)
+            await ctx.send(embed = em)
+        else : 
+            await ctx.send("Please use this command on a NSFW Channel!")
 
     # Shut up
 
