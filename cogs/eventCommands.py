@@ -24,6 +24,16 @@ class eventCommands(commands.Cog):
     async def on_member_remove(self,member):
         print(f'{member} is gone!.')
 
+    # Hello Event
+
+    @commands.Cog.listener()
+    async def on_message(self,message):
+
+        hellos = ['hi','hello','HELLO','hey','heyy','heyyy','hai','sup','whats up', 'Good Morning','GOOD MORNING','good morning','GoodMorning']
+
+        if message.content in hellos: 
+            await message.channel.send(f"Howdy there!")
+
     # CoolDowns
 
     @commands.Cog.listener()

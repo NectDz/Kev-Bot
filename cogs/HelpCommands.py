@@ -1,8 +1,6 @@
 import discord
 from discord import embeds
 from discord.ext import commands
-from check import checkIfGif
-import random, os, asyncpraw
 
 botPrefix = "!kg "
 
