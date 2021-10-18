@@ -16,17 +16,17 @@ class eventCommands(commands.Cog):
     def __init__(self,bot):
         self.bot = bot
 
-    @commands.event
+    @commands.Cog.listener()
     async def on_member_join(self,member):
         print(f'{member} has entered!.')
 
-    @commands.event
+    @commands.Cog.listener()
     async def on_member_remove(self,member):
         print(f'{member} is gone!.')
 
     # CoolDowns
 
-    @commands.event
+    @commands.Cog.listener()
     async def on_command_error(self,ctx, error):
         if isinstance(error, commands.errors.CommandOnCooldown):  
             # isinstance is used to compare 2 thing. If they are the same it returns True in this case were comparing if the error is equal to the other error
@@ -36,7 +36,7 @@ class eventCommands(commands.Cog):
 
     # Commands/Events
 
-    @commands.event
+    @commands.Cog.listener()
     async def on_message_delete(self,message):
         snipe_message_author[message.channel.id] = message.author
         snipe_message_content[message.channel.id] = message.content
