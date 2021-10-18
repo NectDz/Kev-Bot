@@ -18,7 +18,7 @@ class eventCommands(commands.Cog):
 
     @commands.Cog.listener()
     async def on_member_join(self,member):
-        print(f'{member} has entered!.')
+        pass
 
     @commands.Cog.listener()
     async def on_member_remove(self,member):
