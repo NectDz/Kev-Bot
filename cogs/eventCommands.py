@@ -31,10 +31,10 @@ class eventCommands(commands.Cog):
 
         hellos = ['hi','hello','HELLO','hey','heyy','heyyy','hai','sup','whats up', 'Good Morning','GOOD MORNING','good morning','GoodMorning']
 
-        if message.content in hellos: 
+        if message.content.lower() in hellos: 
             await message.channel.send(f"Howdy there!")
         
-        if message.content == "the younger the better": 
+        if message.content.lower() == "the younger the better": 
             await message.channel.send(f"Exactly!")
 
     # CoolDowns
