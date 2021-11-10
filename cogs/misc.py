@@ -139,7 +139,6 @@ class miscCommands(commands.Cog):
             await ctx.message.add_reaction('🤔')
             return
 
-
         kiss  = random.choice(kissGifs)
         em = discord.Embed(colour = discord.Colour.red())
         em.add_field(name = f"Kiss Command",value = f'**{ctx.author.mention} kissed {user}!** :kissing_heart:')
