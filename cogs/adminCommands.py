@@ -21,7 +21,6 @@ class adminCommands(commands.Cog):
         await user.kick(reason =reason)
 
     # Ban 
-
     @commands.command()
     @commands.has_permissions(ban_members=True)
     async def ban(self,ctx, user: discord.Member,*, reason):
@@ -35,7 +34,6 @@ class adminCommands(commands.Cog):
 
 
     # Clear Command
-
     @commands.command()
     @commands.has_permissions(kick_members=True)
     async def clear(self,ctx, amount : int):
@@ -49,7 +47,6 @@ class adminCommands(commands.Cog):
             await ctx.send("That amount is too damn high!")
 
     # Mute 
-
     @commands.command()
     @commands.has_permissions(kick_members=True)
     async def mute(self,ctx, member : discord.Member):
@@ -60,7 +57,6 @@ class adminCommands(commands.Cog):
         await ctx.send(member.mention + " has been muted")
 
     # Unmute
-
     @commands.command()
     @commands.has_permissions(kick_members=True)
     async def unmute(self,ctx, member : discord.Member):
