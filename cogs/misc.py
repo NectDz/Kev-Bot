@@ -172,7 +172,6 @@ class miscCommands(commands.Cog):
         await ctx.send(embed =em)
 
     # Fuck You 
-
     @commands.command()
     @commands.cooldown(1, 10, commands.BucketType.user)
     async def fu(self,ctx, user):
@@ -187,7 +186,6 @@ class miscCommands(commands.Cog):
         await ctx.send(embed =em)
 
     # NSFW 
-
     @commands.command()
     @commands.cooldown(1, 5, commands.BucketType.user)
     async def nsfw(self,ctx):
@@ -211,7 +209,6 @@ class miscCommands(commands.Cog):
             await ctx.send("Please use this command on a NSFW Channel!")
 
     # Shut up
-
     @commands.command()
     @commands.cooldown(1, 10, commands.BucketType.user)
     async def shutup(self,ctx, user):
@@ -226,7 +223,6 @@ class miscCommands(commands.Cog):
         await ctx.send(embed =em)
     
     # Quick Poll - Coded by Jeremy <333
-
     @commands.command()
     async def poll(self,ctx, *, question=None):
         if question == None:
