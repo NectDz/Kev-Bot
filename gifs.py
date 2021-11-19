@@ -92,6 +92,27 @@ kissGifs = ['https://media.giphy.com/media/l2Je2M4Nfrit0L7sQ/giphy.gif',
             'https://media.giphy.com/media/jR22gdcPiOLaE/giphy.gif',
             'https://media.giphy.com/media/11rWoZNpAKw8w/giphy.gif']
 
+beanerGifs = ['https://media.giphy.com/media/1ZDsMU9jIRvDc7Xffc/giphy.gif',
+             'https://media.giphy.com/media/DvUyL3AXD1Is0/giphy.gif',
+             'https://media.giphy.com/media/3ohs4uPB9ki20XVcTm/giphy.gif',
+             'https://media.giphy.com/media/4DRlGnAqcGSmA/giphy.gif',
+             'https://media.giphy.com/media/3oFzm86IVVwouEbsty/giphy.gif',
+             'https://media.giphy.com/media/2x0tK0ofGXDQXj1r8b/giphy.gif',
+             'https://media.giphy.com/media/Su7qfpu8YVBqE/giphy.gif',
+             'https://media.giphy.com/media/26FeVR0vyqbBTMeIg/giphy.gif',
+             'https://media.giphy.com/media/H8U39O2iDpL2OFZ3OJ/giphy.gif',
+             'https://media.giphy.com/media/3TOSyBjcHrs2y28U06/giphy.gif']
+
+crackerGifs = ['https://media.giphy.com/media/n9YYjrKZaoXQY/giphy.gif',
+               'https://media.giphy.com/media/j78kwONU9JCZBqJbt9/giphy.gif ',
+               'https://media.giphy.com/media/s99lNdV0SCyHu/giphy.gif',
+               'https://media.giphy.com/media/RJtGAlPSfJUDxdb2Q0/giphy.gif',
+               'https://media.giphy.com/media/YrfrbQM7cpAdcbU6Af/giphy.gif',
+               'https://media.giphy.com/media/3o6nUMnp3mDm5DD7dC/giphy.gif',
+               'https://media.giphy.com/media/l4FAWxZQS4xZG0k1O/giphy.gif',
+               'https://media.giphy.com/media/xT1Ra2hoDISwCdN3H2/giphy.gif',
+               'https://media.giphy.com/media/l0HlHR1FEAIKjtGjS/giphy.gif']
+
 gmGifs = ['https://media.giphy.com/media/l2olcETxXQjImhNcm2/giphy.gif',
           'https://media.giphy.com/media/kC8hGmtWz2LMJVPBQ2/giphy.gif',
           'https://media.giphy.com/media/1xm0bJZjPrXaF74GKP/giphy.gif',
@@ -173,3 +194,33 @@ shutUpGifs = ['https://media.tenor.com/images/9072f8795acccc181418d543ba3e6185/t
               'https://media.tenor.com/images/ab3dd9ddb1d058cfc835ebc280aa94b4/tenor.gif',
               'https://media.tenor.com/images/ad15703d6819b78a6a5ffe416b5488ab/tenor.gif',
               'https://media.tenor.com/images/620c6775c1440af8971bf79b12505b97/tenor.gif']
+
+EDPGifs = ['https://c.tenor.com/XZXAZgaDexsAAAAC/edp445-eagles.gif',
+           'https://c.tenor.com/OM8U0Y9caVUAAAAM/wtf-edp-huh.gif',
+           'https://c.tenor.com/nEmjbJT0hGUAAAAd/5unwo-edp.gif',
+           'https://c.tenor.com/BjSjgWS0d2wAAAAC/edp-edp445.gif',
+           'https://c.tenor.com/AlywRKRInesAAAAM/edp.gif',
+           'https://c.tenor.com/vwVA7UPJOwIAAAAd/edp-i-missed-her-age.gif',
+           'https://c.tenor.com/bw4GYFx5mOIAAAAd/edp-edp445.gif',
+           'https://c.tenor.com/GqDuEgxhgqAAAAAC/edp-fistbump.gif',
+           'https://c.tenor.com/K9QmMWWdk88AAAAC/edp-edp-burner.gif',
+           'https://c.tenor.com/T2lMzW9WdicAAAAC/amogli-edp445.gif',
+           'https://c.tenor.com/AlywRKRInesAAAAd/edp.gif',
+           'https://c.tenor.com/AlywRKRInesAAAAd/edp.gif',
+           'https://c.tenor.com/T2lMzW9WdicAAAAC/amogli-edp445.gif',
+           'https://c.tenor.com/G64z9Z9KeDgAAAAd/edp-thrust.gif',
+           'https://c.tenor.com/voDvl27FqrEAAAAd/edp445-edp.gif',
+           'https://c.tenor.com/BW2Edm10KhQAAAAM/edp.gif',
+           'https://pbs.twimg.com/media/BdhZ6T0IgAAivTy.jpg']
+
+AsianGifs = ['https://media4.giphy.com/media/16Sg1XyCyjfkA/giphy.gif',
+             'https://media1.giphy.com/media/dKZRRvQhrT2HS/giphy.gif',
+             'https://media4.giphy.com/media/HiGPJdGNFfFyE/giphy.gif',
+             'https://media4.giphy.com/media/KiQTBiI77Dpy8/giphy.gif',
+             'https://media1.giphy.com/media/7wDEaTbCupuRq/giphy.gif',
+             'https://media1.giphy.com/media/PxsTynUW6OVNK/giphy.gif',
+             'https://media1.giphy.com/media/l1JojwaIegn6fbgd2/giphy.gif',
+             'https://media0.giphy.com/media/26FfgvCYJi6DPaZY4/giphy.gif',
+             'https://media4.giphy.com/media/aT8xFndP3Kpeo/giphy.gif',
+             'https://media2.giphy.com/media/UQsIt85ldUSskS3i1b/giphy.gif',
+             'https://media4.giphy.com/media/LktZs35kNS6KA/giphy.gif']
