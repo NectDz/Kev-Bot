@@ -221,6 +221,15 @@ class miscCommands(commands.Cog):
         em.add_field(name = f"ShutUp Command",value = f'**{ctx.author.mention} told {user} to shut up!**')
         em.set_image(url = shutup)
         await ctx.send(embed =em)
+
+    @commands.command()
+    @commands.cooldown(1, 5, commands.BucketType.user)
+    async def edp(self,ctx, user):
+        edp  = random.choice(EDPGifs)
+        em = discord.Embed(colour = discord.Colour.red())
+        em.add_field(name = f"EDP Command",value = f'**{ctx.author.mention}** says {user} went EDP Mode!')
+        em.set_image(url = edp)
+        await ctx.send(embed =em)
     
     # Quick Poll - Coded by Jeremy <333
     @commands.command()
