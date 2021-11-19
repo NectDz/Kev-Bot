@@ -42,6 +42,7 @@ class helpCommands(commands.Cog):
     async def help3(self,ctx):    
         em = discord.Embed(colour = discord.Colour.gold(),title = "Help 3", description = "Use **!kg <command>** to use a command\nDo **!kg help <command>** to see how to use the command")
         em.add_field(name = "**jail**", value = "Puts the user you mentioned in Jail!")
+        em.add_field(name = "**edp**", value = "Use this when someone goes edp mode!")
         em.add_field(name = "**snipe**", value = "Snipes messages that have been deleted by someone.")
         em.add_field(name = "**poll**", value = "Makes a poll to let you know what others think!")
         em.add_field(name = "**av**", value = "Shows someones avatar.")
@@ -115,6 +116,17 @@ class helpCommands(commands.Cog):
         await ctx.send(embed =em)
 
     @help.command()
+    async def beaner(self,ctx):
+        em = discord.Embed(colour = discord.Colour.gold(),title = "Beaner Command", description = f"{botPrefix} beaner @<member>")
+        await ctx.send(embed =em)
+
+    @help.command()
+    async def cracker(self,ctx):
+        em = discord.Embed(colour = discord.Colour.blue(),title = "Cracker Command", description = "Calls the person you mentioned a Cracker")
+        em.add_field(name = "**Syntax**", value =f"{botPrefix} cracker @<member>")
+        await ctx.send(embed =em)
+
+    @help.command()
     async def kill(self,ctx):
         em = discord.Embed(colour = discord.Colour.blue(),title = "Kill Command", description = "Kills the person you mentioned :eyes:")
         em.add_field(name = "**Syntax**", value =f"{botPrefix} kill @<member>")
@@ -142,6 +154,12 @@ class helpCommands(commands.Cog):
     async def shutup(self,ctx): 
         em = discord.Embed(colour = discord.Colour.blue(),title = "Cry Command", description = "Shows a crying gif ")
         em.add_field(name = "**Syntax**", value =f"{botPrefix} shutup @<member>")
+        await ctx.send(embed =em)
+    
+    @help.command()
+    async def edp(self,ctx): 
+        em = discord.Embed(colour = discord.Colour.blue(),title = "EDP Command", description = "When someone goes EDP Mode use this! ")
+        em.add_field(name = "**Syntax**", value =f"{botPrefix} edp @<user>")
         await ctx.send(embed =em)
 
     @help.command()
