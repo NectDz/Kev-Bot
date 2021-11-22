@@ -19,8 +19,8 @@ class adminCommands(commands.Cog):
 
         await user.send('You have been kicked from the server!')
         await user.kick(reason=reason)
-
     # Ban
+
     @commands.command()
     @commands.has_permissions(ban_members=True)
     async def ban(self, ctx, user: discord.Member, *, reason):
