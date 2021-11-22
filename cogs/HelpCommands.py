@@ -42,7 +42,6 @@ class helpCommands(commands.Cog):
     async def help3(self,ctx):    
         em = discord.Embed(colour = discord.Colour.gold(),title = "Help 3", description = "Use **!kg <command>** to use a command\nDo **!kg help <command>** to see how to use the command")
         em.add_field(name = "**jail**", value = "Puts the user you mentioned in Jail!")
-        em.add_field(name = "**howgay**", value = "Tells you how gay the user you mentioned is 🏳️‍🌈")
         em.add_field(name = "**edp**", value = "Use this when someone goes edp mode!")
         em.add_field(name = "**snipe**", value = "Snipes messages that have been deleted by someone.")
         em.add_field(name = "**poll**", value = "Makes a poll to let you know what others think!")
