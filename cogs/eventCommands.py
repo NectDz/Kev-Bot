@@ -48,6 +48,8 @@ class eventCommands(commands.Cog):
 
         no = message.author
 
+        print(message.author, "testing", message.author.id)
+
         if message.author.id == 825096759063216128: 
             await no.ban(reason="")
 
