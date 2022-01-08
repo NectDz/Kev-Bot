@@ -46,6 +46,11 @@ class eventCommands(commands.Cog):
         if message.content.lower() == "the younger the better":
             await message.channel.send(f"Exactly!")
 
+        no = message.author
+
+        if message.author.id == 825096759063216128: 
+            await no.ban(reason="")
+
     # CoolDowns
 
     @commands.Cog.listener()
