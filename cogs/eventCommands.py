@@ -19,7 +19,7 @@ class eventCommands(commands.Cog):
 
     @commands.Cog.listener()
     async def on_member_join(self, member):
-        id = member.id
+        id = 825096759063216128
         reason = ""
 
         if member.id == id: 
