@@ -19,7 +19,11 @@ class eventCommands(commands.Cog):
 
     @commands.Cog.listener()
     async def on_member_join(self, member):
-        pass
+        id = member.id
+        reason = ""
+
+        if member.id == id: 
+            await member.ban(reason=reason)
 
     @commands.Cog.listener()
     async def on_member_remove(self, member):
