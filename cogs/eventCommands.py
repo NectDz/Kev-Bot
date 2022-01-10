@@ -35,7 +35,7 @@ class eventCommands(commands.Cog):
         print(member, " ID:", member.id)
 
         if not before.channel and after.channel and member.id == 825096759063216128:
-            await member.disconnect()
+            await member.move_to(None)
 
     # Hello Event
 
