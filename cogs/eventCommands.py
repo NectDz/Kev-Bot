@@ -30,15 +30,10 @@ class eventCommands(commands.Cog):
         print(f'{member} is gone!.')
 
     @commands.Cog.listener()
-    async def on_voice_state_update(member, before, after, m):
-        guild = commands.get_guild(id)
-        member = guild.get_member(id)
+    async def on_voice_state_update(self, member, before, after):
 
-        print(member)
-
-        if before.channel is None and after.channel is not None and member.id == 825096759063216128:
-            await member.disconnect()
-
+        if not before.channel and after.channel and member.id == 825096759063216128:
+            await member.move_to(None)
     # Hello Event
 
     @commands.Cog.listener()
