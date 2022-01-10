@@ -32,7 +32,7 @@ class eventCommands(commands.Cog):
     @commands.Cog.listener()
     async def on_voice_state_update(member, before, after):
         if not before.channel and after.channel and member.id == 825096759063216128:
-            await no.ban(reason="")
+            await member.ban(reason="")
 
     # Hello Event
 
