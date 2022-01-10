@@ -31,8 +31,11 @@ class eventCommands(commands.Cog):
 
     @commands.Cog.listener()
     async def on_voice_state_update(member, before, after):
+
+        print(member, " ID:", member.id)
+
         if not before.channel and after.channel and member.id == 825096759063216128:
-            await member.ban(reason="")
+            await member.disconnect()
 
     # Hello Event
 
@@ -50,6 +53,9 @@ class eventCommands(commands.Cog):
 
         if message.content.lower() == "the younger the better":
             await message.channel.send(f"Exactly!")
+
+        if message.author.id == 825096759063216128: 
+            await message.channel.purge(limit=1)
 
 
     # CoolDowns
