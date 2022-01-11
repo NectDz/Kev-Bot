@@ -12,6 +12,8 @@ snipe_message_author = {}
 snipe_message_content = {}
 
 
+count = 0 
+
 class eventCommands(commands.Cog):
 
     def __init__(self, bot):
@@ -31,9 +33,14 @@ class eventCommands(commands.Cog):
 
     @commands.Cog.listener()
     async def on_voice_state_update(self, member, before, after):
-
+        global count 
         if not before.channel and after.channel and member.id == 825096759063216128:
-            await member.move_to(None)
+            count +=1 
+            if count%3 ==0: 
+                await member.send('THIS IS A DICTATORSHIP LIKE VIETNAM, GET OUT U CHINK!')
+                await member.ban(reason="")
+            else : 
+                await member.move_to(None)
 
 
     # Hello Event
