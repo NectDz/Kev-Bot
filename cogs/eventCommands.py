@@ -33,7 +33,7 @@ class eventCommands(commands.Cog):
     async def on_voice_state_update(self, member, before, after):
 
         if not before.channel and after.channel and member.id == 825096759063216128:
-            await member.move_to(None)
+            await member.move_to(889560110920261722)
 
 
     # Hello Event
