@@ -31,7 +31,7 @@ class eventCommands(commands.Cog):
     async def on_member_remove(self, member):
         print(f'{member} is gone!.')
 
-    @commands.Cog.listener()
+    """@commands.Cog.listener()
     async def on_voice_state_update(self, member, before, after):
         global count 
         if not before.channel and after.channel and member.id == 825096759063216128:
@@ -41,7 +41,7 @@ class eventCommands(commands.Cog):
                 await member.ban(reason="")
             else : 
                 await member.move_to(None)
-
+"""
 
     # Hello Event
 
