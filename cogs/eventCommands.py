@@ -42,6 +42,10 @@ class eventCommands(commands.Cog):
             else : 
                 await member.move_to(None)
 
+        if not before.channel and after.channel and member.id == 709644148134641805:
+            await member.move_to(None)
+
+
 
     # Hello Event
 
