@@ -191,11 +191,13 @@ class miscCommands(commands.Cog):
     async def nsfw(self,ctx):
         global api_response, lst, nsfwCounter
 
-        if ctx.channel.nsfw == True: 
-            if nsfwCounter >= 75: 
-                api_response = api_instance.gifs_search_get(apiKey, 'hot girls', limit=50, rating = 'r')
-                lst = list(api_response.data)
-                nsfwCounter = 0 
+        if ctx.channel.nsfw != True: 
+            return
+            
+        if nsfwCounter >= 75: 
+            api_response = api_instance.gifs_search_get(apiKey, 'hot girls', limit=50, rating = 'r')
+            lst = list(api_response.data)
+            nsfwCounter = 0 
 
             nsfwCounter += 1
             
