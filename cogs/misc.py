@@ -192,8 +192,8 @@ class miscCommands(commands.Cog):
         global api_response, lst, nsfwCounter
 
         if ctx.channel.nsfw != True: 
-            return
-            
+            await ctx.send("Please use this command on a NSFW Channel!")
+
         if nsfwCounter >= 75: 
             api_response = api_instance.gifs_search_get(apiKey, 'hot girls', limit=50, rating = 'r')
             lst = list(api_response.data)
@@ -207,8 +207,6 @@ class miscCommands(commands.Cog):
             em.set_image(url = f'https://media.giphy.com/media/{gif.id}/giphy.gif')
 
             await ctx.send(embed = em)
-        else : 
-            await ctx.send("Please use this command on a NSFW Channel!")
 
     # Shut up
     @commands.command()
