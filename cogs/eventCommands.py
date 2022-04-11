@@ -32,16 +32,18 @@ class eventCommands(commands.Cog):
         print(f'{member} is gone!.')
 
 
+    """
     @commands.Cog.listener()
     async def on_voice_state_update(self, member, before, after):
         global count 
-        if not before.channel and after.channel and member.id == 709644148134641805:
+        if not before.channel and after.channel and member.id == 825096759063216128:
             count +=1 
             if count%3 ==0: 
                 await member.send('THIS IS A DICTATORSHIP LIKE VIETNAM, GET OUT U CHINK!')
                 await member.ban(reason="")
             else : 
                 await member.move_to(None)
+    """
 
     # Hello Event
 
