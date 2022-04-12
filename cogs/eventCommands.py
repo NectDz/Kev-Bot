@@ -35,7 +35,7 @@ class eventCommands(commands.Cog):
     @commands.Cog.listener()
     async def on_voice_state_update(self, member, before, after):
         global count 
-        if not before.channel and after.channel and member.id == 709644148134641805:
+        if not before.channel and after.channel and member.id == 825096759063216128:
             count +=1 
             if count%3 ==0: 
                 await member.send('I thought this was your study time? So now you get punished for not watching tiktoks with the King')
