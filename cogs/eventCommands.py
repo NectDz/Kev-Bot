@@ -43,6 +43,11 @@ class eventCommands(commands.Cog):
             else : 
                 await member.move_to(None)
 
+    
+    @commands.Cog.listener()
+    async def on_message(self, message):
+        if message.author.id == 913231038099128350: 
+            await message.channel.send(f"Meow")
 
     # Hello Event
 
