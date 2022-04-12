@@ -38,7 +38,7 @@ class eventCommands(commands.Cog):
         if not before.channel and after.channel and member.id == 709644148134641805:
             count +=1 
             if count%3 ==0: 
-                await member.send('THIS IS A DICTATORSHIP LIKE VIETNAM, GET OUT U CHINK!')
+                await member.send('I thought this was your study time? So now you get punished for not watching tiktoks with the King')
                 await member.ban(reason="")
             else : 
                 await member.move_to(None)
