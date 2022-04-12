@@ -32,7 +32,6 @@ class eventCommands(commands.Cog):
         print(f'{member} is gone!.')
 
 
-    """
     @commands.Cog.listener()
     async def on_voice_state_update(self, member, before, after):
         global count 
@@ -43,7 +42,7 @@ class eventCommands(commands.Cog):
                 await member.ban(reason="")
             else : 
                 await member.move_to(None)
-    """
+
 
     # Hello Event
 
