@@ -276,6 +276,11 @@ class miscCommands(commands.Cog):
         if str(user) == "@everyone" or str(user) == ctx.author.mention:
             await ctx.message.add_reaction('🤔')
             return
+
+        if str(user) == "@KingKev": 
+            await ctx.send("Kevin is not gay...")
+            return
+
         em = discord.Embed(colour = discord.Colour.purple())
         em.add_field(name = f"Gay Meter",value = f'{user} is {random.choice(gayMeter)}% gay 🏳️‍🌈!')
         await ctx.send(embed =em)
