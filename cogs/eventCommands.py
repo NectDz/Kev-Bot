@@ -6,7 +6,7 @@ from giphy_client.rest import ApiException
 import asyncio
 
 
-# Snipe Command - If you see this you a gay ass nigga.
+# Snipe Command
 
 snipe_message_author = {}
 snipe_message_content = {}
@@ -30,24 +30,6 @@ class eventCommands(commands.Cog):
     @commands.Cog.listener()
     async def on_member_remove(self, member):
         print(f'{member} is gone!.')
-
-
-    @commands.Cog.listener()
-    async def on_voice_state_update(self, member, before, after):
-        global count 
-        if not before.channel and after.channel and member.id == 825096759063216128:
-            count +=1 
-            if count%3 ==0: 
-                await member.send('I thought this was your study time? So now you get punished for not watching tiktoks with the King')
-                await member.ban(reason="")
-            else : 
-                await member.move_to(None)
-
-    
-    @commands.Cog.listener()
-    async def on_message(self, message):
-        if message.author.id == 913231038099128350: 
-            await message.channel.send(f"Meow")
 
     # Hello Event
 
