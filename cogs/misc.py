@@ -10,18 +10,6 @@ import asyncio
 
 num = [str(i) for i in range(1,10)]
 
-# NSFW 
-
-nsfwCounter = 0 
-apiKey = os.environ['giphyKEY']
-api_instance = giphy_client.DefaultApi()
-api_response = api_instance.gifs_search_get(apiKey, 'nude girls', limit=50, rating = 'r')
-lst = list(api_response.data)
-
-# Gay Meter
-
-gayMeter = [i for i in range(1,101)]
-
 class miscCommands(commands.Cog):
 
     def __init__(self,bot):
@@ -149,50 +137,6 @@ class miscCommands(commands.Cog):
         em.set_image(url = kiss)
         await ctx.send(embed =em)
 
-    # Beaner Command 
-
-
-    @commands.command()
-    @commands.cooldown(1, 10, commands.BucketType.user)
-    async def beaner(self,ctx,user):
-        if str(user) == "@everyone" or str(user) == ctx.author.mention:
-            await ctx.message.add_reaction('🤔')
-            return
-
-        beaner  = random.choice(beanerGifs)
-        em = discord.Embed(colour = discord.Colour.red())
-        em.add_field(name = f"Beaner Command",value = f'**{ctx.author.mention} called {user} a beaner! :poop:**')
-        em.set_image(url = beaner)
-        await ctx.send(embed = em)
-
-    # Cracker Command 
-
-    @commands.command()
-    @commands.cooldown(1, 10, commands.BucketType.user)
-    async def cracker(self,ctx,user):
-        if str(user) == "@everyone" or str(user) == ctx.author.mention:
-            await ctx.message.add_reaction('🤔')
-            return
-
-        cracker  = random.choice(crackerGifs)
-        em = discord.Embed(colour = discord.Colour.red())
-        em.add_field(name = f"Cracker Command",value = f'**{ctx.author.mention} called {user} a cracker!**')
-        em.set_image(url = cracker)
-        await ctx.send(embed =em)
-
-    @commands.command()
-    @commands.cooldown(1, 10, commands.BucketType.user)
-    async def chink(self,ctx,user):
-        if str(user) == "@everyone" or str(user) == ctx.author.mention:
-            await ctx.message.add_reaction('🤔')
-            return
-
-        asian  = random.choice(AsianGifs)
-        em = discord.Embed(colour = discord.Colour.red())
-        em.add_field(name = f"Asian Command",value = f'**{ctx.author.mention} called {user} a chink!**')
-        em.set_image(url = asian)
-        await ctx.send(embed =em)
-
     # Kill Command
 
     @commands.command()
@@ -233,29 +177,6 @@ class miscCommands(commands.Cog):
         em.set_image(url = fuck)
         await ctx.send(embed =em)
 
-    # NSFW 
-    @commands.command()
-    @commands.cooldown(1, 5, commands.BucketType.user)
-    async def nsfw(self,ctx):
-        global api_response, lst, nsfwCounter
-
-        if ctx.channel.nsfw != True: 
-            await ctx.send("Please use this command on a NSFW Channel!")
-
-        if nsfwCounter >= 75: 
-            api_response = api_instance.gifs_search_get(apiKey, 'hot girls', limit=50, rating = 'r')
-            lst = list(api_response.data)
-            nsfwCounter = 0 
-
-            nsfwCounter += 1
-            
-            gif = random.choice(lst)
-
-            em = discord.Embed(color = discord.Colour.blue(),title = "KevBot NSFW")
-            em.set_image(url = f'https://media.giphy.com/media/{gif.id}/giphy.gif')
-
-            await ctx.send(embed = em)
-
     # Shut up
     @commands.command()
     @commands.cooldown(1, 10, commands.BucketType.user)
@@ -268,74 +189,6 @@ class miscCommands(commands.Cog):
         em = discord.Embed(colour = discord.Colour.red())
         em.add_field(name = f"ShutUp Command",value = f'**{ctx.author.mention} told {user} to shut up!**')
         em.set_image(url = shutup)
-        await ctx.send(embed =em)
-
-    @commands.command()
-    @commands.cooldown(1, 10, commands.BucketType.user)
-    async def howgay(self,ctx, user):
-        if str(user) == "@everyone" or str(user) == ctx.author.mention:
-            await ctx.message.add_reaction('🤔')
-            return
-
-        if str(user) == "@KingKev": 
-            await ctx.send("Kevin is not gay...")
-            return
-
-        em = discord.Embed(colour = discord.Colour.purple())
-        em.add_field(name = f"Gay Meter",value = f'{user} is {random.choice(gayMeter)}% gay 🏳️‍🌈!')
-        await ctx.send(embed =em)
-
-    @commands.command()
-    @commands.cooldown(1, 5, commands.BucketType.user)
-    async def edp(self,ctx, user):
-        edp  = random.choice(EDPGifs)
-        em = discord.Embed(colour = discord.Colour.red())
-        em.add_field(name = f"EDP Command",value = f'**{ctx.author.mention}** says {user} went EDP Mode!')
-        em.set_image(url = edp)
-        await ctx.send(embed =em)
-
-    # Beaner Command 
-
-
-    @commands.command()
-    @commands.cooldown(1, 10, commands.BucketType.user)
-    async def beaner(self,ctx,user):
-        if str(user) == "@everyone" or str(user) == ctx.author.mention:
-            await ctx.message.add_reaction('🤔')
-            return
-
-        beaner  = random.choice(beanerGifs)
-        em = discord.Embed(colour = discord.Colour.red())
-        em.add_field(name = f"Beaner Command",value = f'**{ctx.author.mention} called {user} a beaner! :poop:**')
-        em.set_image(url = beaner)
-        await ctx.send(embed = em)
-
-    # Cracker Command 
-
-    @commands.command()
-    @commands.cooldown(1, 10, commands.BucketType.user)
-    async def cracker(self,ctx,user):
-        if str(user) == "@everyone" or str(user) == ctx.author.mention:
-            await ctx.message.add_reaction('🤔')
-            return
-
-        cracker  = random.choice(crackerGifs)
-        em = discord.Embed(colour = discord.Colour.red())
-        em.add_field(name = f"Cracker Command",value = f'**{ctx.author.mention} called {user} a cracker!**')
-        em.set_image(url = cracker)
-        await ctx.send(embed =em)
-
-    @commands.command()
-    @commands.cooldown(1, 10, commands.BucketType.user)
-    async def chink(self,ctx,user):
-        if str(user) == "@everyone" or str(user) == ctx.author.mention:
-            await ctx.message.add_reaction('🤔')
-            return
-
-        asian  = random.choice(AsianGifs)
-        em = discord.Embed(colour = discord.Colour.red())
-        em.add_field(name = f"Asian Command",value = f'**{ctx.author.mention} called {user} a chink!**')
-        em.set_image(url = asian)
         await ctx.send(embed =em)
     
     # Quick Poll - Coded by Jeremy <333
